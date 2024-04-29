@@ -10,18 +10,23 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    
-
     // Obtener valores del formulario
-    $nombreusuarioweb = $_GET["nombreUsuarioWeb"];
-    $contrasenausuarioweb = $_GET["contrasenaUsuarioWeb"];
-    $correoelectronicousuarioweb = $_GET["correoelectronicoUsuarioWeb"];
-    $id_usuario = $_GET["id_Usuario"];
-    $id_usuario++;
+    $nombreusuario = $_GET["nombreUsuario"];
+    $contrasena = $_GET["contrasena"];
+    $correoelectronico = $_GET["correoelectronico"];
+
+    $str = $contrasena;
+    $encript =  md5($str);
+
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+
+
 
     // Preparar la consulta SQL para la inserción
-    $sql = "INSERT INTO usuariosweb ( nombreUsuarioWeb, contrasenaUsuarioWeb, correoelectronicoUsuarioWeb,id_Usuario)
-            VALUES ( '$nombreusuarioweb', '$contrasenausuarioweb', '$correoelectronicousuarioweb','$id_usuario')";
+    $sql = "INSERT INTO usuarios ( nombreUsuario, contrasena, correoelectronico,IP_Registro)
+            VALUES ( '$nombreusuario', ' $encript', '$correoelectronico',' $ip')";
+            echo  $sql;
 
     // Ejecutar la consulta
     if ($conn->query($sql) === TRUE) {
