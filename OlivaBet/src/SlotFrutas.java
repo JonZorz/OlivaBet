@@ -8,27 +8,30 @@ public class SlotFrutas extends JFrame {
     private String[][] emojis;
     private JPanel panelEmojis;
     private JLabel lblPuntos;
+
+    
+    
     public SlotFrutas() {
         setTitle("Slot Frutas");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600); 
-        setLocationRelativeTo(null);
+        setVisible(true);
 
-
+   
         emojis = new String[][]{
         	{"🍓", "🍈", "🍉", "🍇", "🍒"},
             {"🍊", "🥝", "🍌", "🥥", "🍍"} 
         };
 
-        lblPuntos = new JLabel ("0");
+        lblPuntos = new JLabel ("5000");
         panelEmojis = new JPanel(new GridLayout(8, 7));
 
-      
-        add(panelEmojis, BorderLayout.CENTER);
+		add(panelEmojis, BorderLayout.CENTER);
+	
         lblPuntos.setFont(new Font("Verdana",Font.BOLD,22));
         lblPuntos.setForeground(new Color (94, 16, 23));
         add(lblPuntos,BorderLayout.NORTH);
-        
+
        
         JButton btnJugar = new JButton("Jugar");
         btnJugar.addActionListener(new ActionListener() {

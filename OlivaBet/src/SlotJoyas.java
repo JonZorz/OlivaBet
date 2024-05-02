@@ -14,7 +14,7 @@ public class SlotJoyas extends JFrame {
         setTitle("Slot Joyas");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1000, 400); 
-        setLocationRelativeTo(null);
+        setVisible(true);
 
 
         emojis = new String[][]{
@@ -25,7 +25,7 @@ public class SlotJoyas extends JFrame {
        
       
        
-        lblPuntos = new JLabel ("0");
+        lblPuntos = new JLabel ("5000");
         panelEmojis = new JPanel(new GridLayout(4, 9));
         
         

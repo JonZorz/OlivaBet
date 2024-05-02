@@ -29,8 +29,8 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon">
-  <title>Finter</title>
+  <link rel="shortcut icon" href="images/Oliva_Bet.png" type="image/x-icon">
+  <title>Contáctanos OlivaBet</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -51,6 +51,18 @@
 </head>
 
 <body class="sub_page">
+  <section class="modal" id="mostrar" style="display: none;">
+    <div class="modal-container">
+        <img class="modal-img" src="images/Oliva_Bet.png" >
+        <h2 class="title">¡¡Bienvenido a OlivaBet!!</h2>
+        <p class="paragraph">Inicia sesion en OlivaBet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
+        <div class="btns">
+            <a href="#" class="open-view">Iniciar Sesion</a>
+            <a href="#" class="open-guide">Registrate</a>
+        </div>
+        <a href="index.html" class="close">&times;</a>
+    </div>
+  </section>
   <div class="hero_area">
     <div class="hero_bg_box">
       <img src="images/hero-bg.jpg" alt="">
@@ -62,36 +74,12 @@
 
           <div class="contact_nav">
             <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Location
-              </span>
             </a>
             <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Call : +01 123455678990
-              </span>
+             <h1>OlivaBet</h1>
+             
             </a>
             <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                demo@gmail.com
-              </span>
-            </a>
-          </div>
-          <div class="social_box">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -99,7 +87,7 @@
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand " href="index.html"> Finter </a>
+            
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
@@ -107,26 +95,23 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="team.html"> Team </a>
+                <li class="nav-item active ">
+                  <a class="nav-link" href="index.html">Inicio </a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="contact.html">Contact Us <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="about.html"> Nosotros </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="service.html">Tragaperras</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contáctanos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" onclick="mostrarAaaaa()">Cuenta</a>
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <span>
-                      Login
+                      Cuenta
                     </span>
                   </a>
                 </li>
@@ -164,18 +149,18 @@
 
               <div class="form-row">
                 <input type="hidden" name="db" value ="olivabet">
-                <input type="hidden" name="table" value ="usuarios">
+                <input type="hidden" name="table" value ="usuariosweb">
                 <input type="hidden" name="idUsuarioWeb">
                 <div class="form-group col">
-                  <input type="text" class="form-control" name ="nombreUsuario" placeholder="Nombre de Usuario" required />
+                  <input type="text" class="form-control" name ="nombreUsuarioWeb" placeholder="Nombre de Usuario" required />
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-lg-6">
-                  <input type="text" class="form-control" name ="contrasena" placeholder="Contraseña" required/>
+                  <input type="text" class="form-control" name ="contrasenaUsuarioWeb" placeholder="Correo Electrónico" required/>
                 </div>
                 <div class="form-group col-lg-6">
-                  <input type="text" class="form-control" name="correoelectronico" placeholder="Correo Electrónico" />
+                  <input type="text" class="form-control" name="correoelectronicoUsuarioWeb" placeholder="Contraseña" />
                   <input type="hidden" name="id_Usuario">
                 </div>
               </div>
@@ -264,6 +249,18 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
+
+  <script>
+
+    function mostrarAaaaa() {
+      document.getElementById("mostrar").style.display = "block";
+    }
+  
+      
+    </script>
+
+
+
 </body>
 
 </html>

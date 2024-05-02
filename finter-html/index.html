@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/Oliva_Bet.png" type="image/x-icon">
-  <title>Inicio Oliva Bet</title>
+  <title>Inicio OlivaBet</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -33,6 +33,21 @@
 </head>
 
 <body>
+
+  <section class="modal" id="mostrar" style="display: none;">
+    <div class="modal-container">
+        <img class="modal-img" src="images/Oliva_Bet.png" >
+        <h2 class="title">¡¡Bienvenido a OlivaBet!!</h2>
+        <p class="paragraph">Inicia sesion en OlivaBet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
+        <div class="btns">
+          <button>
+            <a href="#" class="open-guide">Registrate</a>
+          </button>
+        </div>
+        <a href="index.html" class="close">&times;</a>
+    </div>
+  </section>
+
   <div class="hero_area">
     <div class="hero_bg_box">
       <img src="images/slots.jpg" alt="">
@@ -44,36 +59,12 @@
 
           <div class="contact_nav">
             <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Location
-              </span>
             </a>
             <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Call : +01 123455678990
-              </span>
+             <h1>OlivaBet</h1>
+             
             </a>
             <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                demo@gmail.com
-              </span>
-            </a>
-          </div>
-          <div class="social_box">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -81,7 +72,7 @@
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand " href="index.html"> Finter </a>
+            
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
@@ -89,26 +80,23 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav  ">
+                <li class="nav-item active ">
+                  <a class="nav-link" href="index.html">Inicio </a>
+                </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="about.html"> Nosotros </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
+                  <a class="nav-link" href="service.html">Tragaperras</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="service.html">Services</a>
+                  <a class="nav-link" href="contact.html">Contáctanos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="team.html"> Team </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" onclick="mostrarAaaaa()">Cuenta</a>
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <span>
-                      Login
+                      Cuenta
                     </span>
                   </a>
                 </li>
@@ -217,7 +205,7 @@
     <div class="container">
       <div class="heading_container heading_center ">
         <h2 class="">
-          Nuestros sercvicios 
+          Nuestros servicios 
         </h2>
         <p class="col-lg-8 px-0">
           ¡¡En OlivaBet podrás difrutas de máquinas de distintas temáticas!!
@@ -378,6 +366,15 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
+
+  <script>
+
+  function mostrarAaaaa() {
+    document.getElementById("mostrar").style.display = "block";
+  }
+
+    
+  </script>
 </body>
 
 </html>

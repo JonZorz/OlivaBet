@@ -151,7 +151,7 @@ a:focus {
 }
 
 .header_section .header_top .contact_nav a {
-  color: #ffffff;
+  color: #ff0000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,8 +222,8 @@ a:focus {
 }
 
 .header_section .header_bottom .container-fluid {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 300px;
+  padding-left: 5px;
 }
 
 .navbar-brand {
@@ -1003,3 +1003,79 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+/* CAJA QUE SOBRESALE */
+* {
+  padding:0;
+  margin:0;
+  font-family: 'Roboto', sans-serif;
+}
+.modal {
+  position: fixed;
+  top: 100;
+  left: 0;
+  background-color: #111111bd;
+  margin-top: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-container {
+  position: relative;
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 100%;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  place-items: center;
+  grid-auto-columns: 100%;
+}
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.paragraph {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.modal-img {
+  width: 50%;
+  max-width: 200px;
+}
+.btns {
+  display: flex;
+  gap: 45px;
+  background-color:red
+  
+}
+.btns > a {
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: .3rem;
+  color: #fff;
+  font-weight: 400;
+}
+.btns .open-view {
+  color: #ffffff;
+  background-color: #0004ff;
+  border: solid thin gray;
+}
+.open-guide {
+ font-size: 1.5rem;
+ color:red
+ 
+ 
+}
+.close {
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color:red
+}

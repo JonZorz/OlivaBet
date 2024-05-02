@@ -14,8 +14,7 @@ public class SlotHalloween extends JFrame {
         setTitle("Slot Haloween");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1000, 800); 
-        setLocationRelativeTo(null);
-
+        setVisible(true);
 
         emojis = new String[][]{
         	{"🧟‍♂️", "🧌", "🧙‍♀️", "🎃", "👻"},
@@ -25,7 +24,7 @@ public class SlotHalloween extends JFrame {
        
       
        
-        lblPuntos = new JLabel ("0");
+        lblPuntos = new JLabel ("5000");
         panelEmojis = new JPanel(new GridLayout(10, 9));
         
         
