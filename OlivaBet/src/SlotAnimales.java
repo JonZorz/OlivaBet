@@ -10,6 +10,7 @@ public class SlotAnimales extends JFrame {
     private String[][] emojis;
     private JPanel panelEmojis;
     private JLabel lblPuntos;
+    JLabel emojiLabel;
     public SlotAnimales() {
         setTitle("Slot Animales");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +58,7 @@ public class SlotAnimales extends JFrame {
             for (int j = 0; j < 7; j++) {
                 int aleatorioFila = (int) (Math.random() * emojis.length);
                 int aleatorioColumna = (int) (Math.random() * emojis[aleatorioFila].length);
-                JLabel emojiLabel = new JLabel(emojis[aleatorioFila][aleatorioColumna]);
+                emojiLabel = new JLabel(emojis[aleatorioFila][aleatorioColumna]);
                 emojiLabel.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
                 emojiLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 panelEmojis.add(emojiLabel);
@@ -68,7 +69,7 @@ public class SlotAnimales extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(SlotAnimales::new);
+        SwingUtilities.invokeLater(SlotAnimales::new);//Hace que doRun.run() se ejecute de forma asincrónica
     }
     
     		

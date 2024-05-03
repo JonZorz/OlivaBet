@@ -1,0 +1,80 @@
+{"$schema": "casino.schema.json",
+
+"Casino": [
+
+{"Usuario": [
+
+{"idUsuario": "",
+"nombreUsuario": "Carlos02",
+"contrasena": "carlitos02",
+"correoelectronico": "carlos02@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""},
+
+{"idUsuario": "",
+"nombreUsuario": "Gerard",
+"contrasena": "205Gerard9",
+"correoelectronico": "gerard@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""},
+
+{"idUsuario": "",
+"nombreUsuario": "Santi",
+"contrasena": "Santiag014",
+"correoelectronico": "sAntiago@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""},
+
+{"idUsuario": "",
+"nombreUsuario": "Aitor52",
+"contrasena": "AitorRo52",
+"correoelectronico": "aitor1952@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""},
+
+{"idUsuario": "",
+"nombreUsuario": "Sofia19",
+"contrasena": "Sofiaaaaaa",
+"correoelectronico": "sofi012@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""},
+
+{"idUsuario": "",
+"nombreUsuario": "Javier",
+"contrasena": "Javitxin01",
+"correoelectronico": "Javitxin@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""},
+
+{"idUsuario": "",
+"nombreUsuario": "Nicolas",
+"contrasena": "NicolassMad",
+"correoelectronico": "Nicolass@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""},
+
+{"idUsuario": "",
+"nombreUsuario": "Pedro",
+"contrasena": "Pedrito24",
+"correoelectronico": "Pedro24@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""},
+
+{"idUsuario": "",
+"nombreUsuario": "Andres1",
+"contrasena": "Andresss1sss",
+"correoelectronico": "andres.1@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""},
+
+{"idUsuario": "",
+"nombreUsuario": "Diego",
+"contrasena": "00Diego001",
+"correoelectronico": "Diego0@gmail.com",
+"fecha_Alta": "",
+"IP_Registro": ""}
+
+]
+}
+]
+}

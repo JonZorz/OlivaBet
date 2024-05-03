@@ -8,8 +8,9 @@ public class SlotFrutas extends JFrame {
     private String[][] emojis;
     private JPanel panelEmojis;
     private JLabel lblPuntos;
-
-    
+    int contadorFresa,contadorPomelo,contadorSandia,contadorUva,contadorCerezas,contadorLimon,contadorNaranaja,contadorBanana,contadorCoco,contadorPina;
+    int puntos;
+    JLabel emojiLabel;
     
     public SlotFrutas() {
         setTitle("Slot Frutas");
@@ -22,6 +23,8 @@ public class SlotFrutas extends JFrame {
         	{"🍓", "🍈", "🍉", "🍇", "🍒"},
             {"🍊", "🥝", "🍌", "🥥", "🍍"} 
         };
+        
+        
 
         lblPuntos = new JLabel ("5000");
         panelEmojis = new JPanel(new GridLayout(8, 7));
@@ -55,10 +58,11 @@ public class SlotFrutas extends JFrame {
             for (int j = 0; j < 7; j++) {
                 int aleatorioFila = (int) (Math.random() * emojis.length);
                 int aleatorioColumna = (int) (Math.random() * emojis[aleatorioFila].length);
-                JLabel emojiLabel = new JLabel(emojis[aleatorioFila][aleatorioColumna]);
+                emojiLabel = new JLabel(emojis[aleatorioFila][aleatorioColumna]);
                 emojiLabel.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30)); 
                 emojiLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 panelEmojis.add(emojiLabel);
+               
             }
         }
         panelEmojis.revalidate(); // Realizamos la acción de poder remover los elementos, se le llama cuando añade o borra elementos existentes
@@ -66,6 +70,6 @@ public class SlotFrutas extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(SlotFrutas::new);
+        SwingUtilities.invokeLater(SlotFrutas::new); //Hace que doRun.run() se ejecute de forma asincrónica
     }
 }
