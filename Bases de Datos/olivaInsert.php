@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 
     // Preparar la consulta SQL para la inserción
-    $sql = "INSERT INTO usuarios ( nombreUsuario, contrasena, correoelectronico,IP_Registro)
-            VALUES ( '$nombreusuario', ' $encript', '$correoelectronico',' $ip')";
+    $sql = "INSERT INTO usuarios (nombreUsuario, contrasena, correoelectronico,IP_Registro)
+            VALUES ('$nombreusuario', '$encript', '$correoelectronico',' $ip')";
             echo  $sql;
 
     // Ejecutar la consulta

@@ -36,12 +36,53 @@
   <section class="modal" id="mostrar" style="display: none;">
     <div class="modal-container">
         <img class="modal-img" src="images/Oliva_Bet.png" >
-        <h2 class="title">¡¡Bienvenido a OlivaBet!!</h2>
-        <p class="paragraph">Inicia sesion en OlivaBet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
-        <div class="btns">
-            <a href="#" class="open-view">Iniciar Sesion</a>
-            <a href="#" class="open-guide">Registrate</a>
+        <h2 id="eliminar" class="title">¡¡Bienvenido a OlivaBet!!</h2>
+        <p id="eliminar_dos" class="paragraph">Inicia sesion en OlivaBet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
+        <div id="eliminar_tres" class="btns">
+          <button>
+            <a href="#" onclick="mostrarFormulario()" class="open-guide">Registrate</a>
+          </button>
+          <button>
+            <a href="#" onclick="mostrarFormulario()" class="open-guide">Iniciar Sesion</a>
+          </button>
         </div>
+          <div class="col-md-5 mx-auto" id="fomulario_boton" style="display: none;">
+            <div class="form_container">
+              <div class="heading_container ">
+                <h3>Accede a tu cuenta </h3>
+              </div>
+              <form name="formulario" method="get" action="http://192.168.1.12/olivaInsert.php" onsubmit="return validarFormulario()">
+  
+  
+                <div class="form-row">
+                  <input type="hidden" name="db" value ="olivabet">
+                  <input type="hidden" name="table" value ="usuariosweb">
+                  <input type="hidden" name="idUsuarioWeb">
+                  <div class="form-group col">
+                    <input type="text" class="form-control" name ="nombreUsuarioWeb" placeholder="Nombre de Usuario" required />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" class="form-control" name ="contrasenaUsuarioWeb" placeholder="Correo Electrónico" required/>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="text" class="form-control" name="correoelectronicoUsuarioWeb" placeholder="Contraseña" />
+                    <input type="hidden" name="id_Usuario">
+                  </div>
+                </div>
+             
+                <div class="boton_enviar">
+                  <button>
+                    Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+
+        
         <a href="index.html" class="close">&times;</a>
     </div>
   </section>
@@ -85,9 +126,6 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="service.html">Tragaperras</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contáctanos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" onclick="mostrarAaaaa()">Cuenta</a>
@@ -213,7 +251,7 @@
       </div>
       <div class="btn-box">
         <a href="">
-          Read More
+          Seleccionar
         </a>
       </div>
     </div>
@@ -298,6 +336,13 @@
       document.getElementById("mostrar").style.display = "block";
     }
   
+    function mostrarFormulario() {
+      document.getElementById("fomulario_boton").style.display = "block";
+      document.getElementById("eliminar").style.display = "none";
+      document.getElementById("eliminar_dos").style.display = "none";
+      document.getElementById("eliminar_tres").style.display = "none";
+    }
+   
       
     </script>
 

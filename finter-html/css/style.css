@@ -224,6 +224,7 @@ a:focus {
 .header_section .header_bottom .container-fluid {
   padding-right: 300px;
   padding-left: 5px;
+  margin-left: -90px;
 }
 
 .navbar-brand {
@@ -711,6 +712,7 @@ a:focus {
   margin-bottom: 45px;
 }
 
+
 .contact_section .row {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -759,6 +761,20 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
 }
+
+.form-row {
+  width: 180%;
+ color:#565554;
+  height: 50px;
+  margin-left: -50px;
+ 
+}
+.boton_enviar {
+margin-left: -45px;
+
+}
+
+
 
 .contact_section .form_container .btn_box button {
   border: none;
@@ -1049,28 +1065,28 @@ a:focus {
 }
 .btns {
   display: flex;
-  gap: 45px;
-  background-color:red
+  gap: 35px;
+  border: none;
+ 
   
 }
-.btns > a {
+
+.open-guide {
   text-decoration: none;
   padding: 1rem;
   border-radius: .3rem;
   color: #fff;
   font-weight: 400;
+  background-color: black;
 }
-.btns .open-view {
-  color: #ffffff;
-  background-color: #0004ff;
-  border: solid thin gray;
+
+.open-guide:hover {
+  background-color: black;
+  color: red;
+  font-weight: 600;
+  
 }
-.open-guide {
- font-size: 1.5rem;
- color:red
- 
- 
-}
+
 .close {
   position: absolute;
   top: .5rem;

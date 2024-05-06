@@ -37,13 +37,49 @@
   <section class="modal" id="mostrar" style="display: none;">
     <div class="modal-container">
         <img class="modal-img" src="images/Oliva_Bet.png" >
-        <h2 class="title">¡¡Bienvenido a OlivaBet!!</h2>
-        <p class="paragraph">Inicia sesion en OlivaBet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
-        <div class="btns">
-          <button>
-            <a href="#" class="open-guide">Registrate</a>
-          </button>
+        <h2 id="eliminar" class="title">¡¡Bienvenido a OlivaBet!!</h2>
+        <p id="eliminar_dos" class="paragraph">Inicia sesion en OlivaBet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
+        <div id="eliminar_tres" class="btns">
+            <a href="#" onclick="mostrarFormulario()" class="open-guide">Registrate</a>
+            <a href="#" onclick="mostrarFormulario()" class="open-guide">Iniciar Sesion</a>
         </div>
+          <div class="col-md-5 mx-auto" id="fomulario_boton" style="display: none;">
+            <div class="form_container">
+              <div class="heading_container heading_center">
+                <h3>Accede a tu cuenta</h3>
+              </div>
+              <form name="formulario" method="get" action="http://192.168.1.12/olivaInsert.php" onsubmit="return validarFormulario()">
+  
+  
+                <div class="form-row">
+                  <input type="hidden" name="db" value ="olivabet">
+                  <input type="hidden" name="table" value ="usuarios">
+                  <input type="hidden" name="idUsuarioWeb">
+                  <div class="form-group col">
+                    <input type="text" class="form-control" name ="nombreUsuario" placeholder="Nombre de Usuario" required />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" class="form-control" name ="contrasena" placeholder="Contraseña" required/>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="text" class="form-control" name="correoelectronico" placeholder="Correo Electrónico" />
+                    <input type="hidden" name="id_Usuario">
+                  </div>
+                </div>
+             
+                <div class="boton_enviar">
+                  <button>
+                    Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+
+        
         <a href="index.html" class="close">&times;</a>
     </div>
   </section>
@@ -90,14 +126,8 @@
                   <a class="nav-link" href="service.html">Tragaperras</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contáctanos</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" onclick="mostrarAaaaa()">Cuenta</a>
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>
-                      Cuenta
-                    </span>
                   </a>
                 </li>
                 <form class="form-inline justify-content-center">
@@ -129,7 +159,7 @@
                         ¡Gracias a Oliva Bet podrás disfrutar de distintas máquinas sin pagar nada!
                     </p>
                     <div class="btn-box">
-                      <a href="contact.html" class="btn1">
+                      <a href="index.html" class="btn1">
                         Regístrate
                       </a>
                     </div>
@@ -186,11 +216,9 @@
         <div class="carousel_btn-box">
           <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
           </a>
           <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
             <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
           </a>
         </div>
       </div>
@@ -373,6 +401,13 @@
     document.getElementById("mostrar").style.display = "block";
   }
 
+  function mostrarFormulario() {
+    document.getElementById("fomulario_boton").style.display = "block";
+    document.getElementById("eliminar").style.display = "none";
+    document.getElementById("eliminar_dos").style.display = "none";
+    document.getElementById("eliminar_tres").style.display = "none";
+  }
+ 
     
   </script>
 </body>
