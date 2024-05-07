@@ -10,10 +10,12 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -79,9 +81,11 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
 	if(e.getSource()==btnRegistrase){
 		insertarDatos();
 	}
+	if(e.getSource()==btnsesion){
+		inicioSesion();
+	}
 		
 		
-		new InicioOlivaBet();
 	}
 
 	public static void main(String[] args) {
@@ -95,7 +99,7 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
         String nombreUsuario = txtnombreUsuario.getText();
         String contrasena = txtcontrasena.getText();
         String correoElectronico = txtcorreo.getText();
-
+       
         String encriptado = encriptacion(contrasena);
         try {
         	long time = System.currentTimeMillis();
@@ -116,16 +120,69 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
          
            stmt.executeUpdate(sql);
           
+           
            stmt.close();//cerrar el statement
 
            conn.close();//cerrar la conexión con la base de datos
            
            
-            System.out.println("Datos insertados correctamente.");
+			JOptionPane.showMessageDialog(this, "Felicidades, te has registrado","Registro",JOptionPane.INFORMATION_MESSAGE);
+
+            new InicioOlivaBet();
         } catch (Exception e) {
             System.out.println("Error al insertar datos: " + e);
+           
         }
     }
+    
+    
+    public boolean inicioSesion() {
+        String nombreUsuarioInicio = txtnombreUsuario.getText();
+        String contrasenaInicio = txtcontrasena.getText();
+        String correoElectronicoInicio = txtcorreo.getText();
+        boolean funciona = false;
+        String encriptadoInicio = encriptacion(contrasenaInicio);
+        
+        try {
+        
+   
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/olivabet", "root", "");
+
+            String iniciosesion = "SELECT nombreUsuario,contrasena,correoelectronico FROM usuarios WHERE nombreUsuario ='"+nombreUsuarioInicio+"'AND contrasena ='"+encriptadoInicio+"'AND correoelectronico ='"+correoElectronicoInicio+"'";
+            PreparedStatement stmt = conn.prepareStatement(iniciosesion);
+            System.out.println(iniciosesion);
+           
+          
+           ResultSet inicioSesion = stmt.executeQuery();
+           if(inicioSesion.next()) {
+        	   funciona = true;
+        	   
+				JOptionPane.showMessageDialog(this, "Felicidades, has iniciado sesión","Inicio de sesión",JOptionPane.INFORMATION_MESSAGE);
+
+        	   new InicioOlivaBet();
+           } else {
+				JOptionPane.showMessageDialog(this, "Tienes que introducir datos correspondientes","Error al inciar sesión",JOptionPane.ERROR_MESSAGE);
+           }
+          
+           stmt.close();//cerrar el statement
+
+           conn.close();//cerrar la conexión con la base de datos
+           
+           
+            
+            
+          
+            
+        } catch (Exception e) {
+            System.out.println("Error al iniciar sesión: " + e);
+        }
+		return funciona;
+    }
+    
+    
+    
+    
+    
     
     public static String encriptacion(String contrasena) {
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-04-2024 a las 13:18:00
+-- Tiempo de generación: 07-05-2024 a las 11:54:25
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -73,8 +73,24 @@ CREATE TABLE `usuarios` (
   `contrasena` text NOT NULL,
   `correoelectronico` text NOT NULL,
   `fecha_Alta` timestamp NOT NULL DEFAULT current_timestamp(),
-  `IP_Registro` varchar(15) NOT NULL
+  `IP_Registro` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idUsuario`, `nombreUsuario`, `contrasena`, `correoelectronico`, `fecha_Alta`, `IP_Registro`) VALUES
+(38, 'Carlos02', '1b004679a38444ae4b430c7004324ab4', 'carlos02@gmail.com', '2024-05-07 07:35:32', ' 192.168.1.12'),
+(39, 'Gerard', 'e2ede96aac3148cf0e1f06bba6b40023', 'gerard@gmail.com', '2024-05-07 07:36:04', ' 192.168.1.12'),
+(40, 'Santi', '60795e1235d40cebe8a127c3f71fd8f8', 'santiago@gmail.com', '2024-05-07 07:36:40', ' 192.168.1.12'),
+(41, 'Aitor52', '902e3c762f6ae14290a1991f3c0ef66e', 'aitor1952@gmail.com', '2024-05-07 07:37:07', ' 192.168.1.12'),
+(42, 'Sofia19', '16c6ec3fcaf21831c84a421b7ab5fac9', 'sofi012@gmail.com', '2024-05-07 07:37:45', ' 192.168.1.12'),
+(43, 'Javier', 'd20ca763dbdca166f6810d14870ba55e', 'javitxin@gmail.com', '2024-05-07 07:38:07', ' 192.168.1.12'),
+(44, 'Nicolas', '0204773b81142772f41d5a8f47ec53ea', 'nicolass@gmail.com', '2024-05-07 07:38:31', ' 192.168.1.12'),
+(45, 'Pedro', '7fc0395f9785e36cdb50e269d109fa32', 'pedro24@gmail.com', '2024-05-07 07:38:50', ' 192.168.1.12'),
+(46, 'Andres1', '4300f6cddd45ec5bcdf211dd266772d2', 'andres1@gmail.com', '2024-05-07 07:39:17', ' 192.168.1.12'),
+(47, 'Diego', '759e12350fc357e029e2388b4e91cb76', 'diego0@gmail.com', '2024-05-07 07:39:47', ' 192.168.1.12');
 
 --
 -- Índices para tablas volcadas
@@ -132,7 +148,7 @@ ALTER TABLE `rakingusuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- Restricciones para tablas volcadas
