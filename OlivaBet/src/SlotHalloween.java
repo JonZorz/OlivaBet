@@ -24,7 +24,7 @@ public class SlotHalloween extends JFrame {
         };
         
        
-        lblPuntos = new JLabel ("5000");
+        lblPuntos = new JLabel ("15000");
         panelEmojis = new JPanel(new GridLayout(10, 9));
         
         

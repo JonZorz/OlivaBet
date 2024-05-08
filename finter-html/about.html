@@ -40,47 +40,12 @@
         <p id="eliminar_dos" class="paragraph">Inicia sesion en OlivaBet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
         <div id="eliminar_tres" class="btns">
           <button>
-            <a href="#" onclick="mostrarFormulario()" class="open-guide">Registrate</a>
+            <a href="registrarse.html" target="_blank" class="open-guide">Registrate</a>
           </button>
           <button>
-            <a href="#" onclick="mostrarFormulario()" class="open-guide">Iniciar Sesion</a>
+            <a href="iniciarsesion.html" target="_blank" class="open-guide">Iniciar Sesion</a>
           </button>
         </div>
-          <div class="col-md-5 mx-auto" id="fomulario_boton" style="display: none;">
-            <div class="form_container">
-              <div class="heading_container heading_center">
-                <h3>Accede a tu cuenta</h3>
-              </div>
-              <form name="formulario" method="get" action="http://192.168.1.12/olivaInsert.php" onsubmit="return validarFormulario()">
-  
-  
-                <div class="form-row">
-                  <input type="hidden" name="db" value ="olivabet">
-                  <input type="hidden" name="table" value ="usuariosweb">
-                  <input type="hidden" name="idUsuarioWeb">
-                  <div class="form-group col">
-                    <input type="text" class="form-control" name ="nombreUsuarioWeb" placeholder="Nombre de Usuario" required />
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-lg-6">
-                    <input type="text" class="form-control" name ="contrasenaUsuarioWeb" placeholder="Correo Electrónico" required/>
-                  </div>
-                  <div class="form-group col-lg-6">
-                    <input type="text" class="form-control" name="correoelectronicoUsuarioWeb" placeholder="Contraseña" />
-                    <input type="hidden" name="id_Usuario">
-                  </div>
-                </div>
-             
-                <div class="boton_enviar">
-                  <button>
-                    Enviar
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-
 
         
         <a href="index.html" class="close">&times;</a>
@@ -205,16 +170,16 @@
           </div>
           <div class="col-md-4 ">
             <div class="social_box">
-              <a href="">
+              <a href="https://www.facebook.com/?locale=es_ES" target="_blank">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="https://twitter.com/?lang=es" target="_blank">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="https://es.linkedin.com/" target="_blank">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/" target="_blank">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
             </div>

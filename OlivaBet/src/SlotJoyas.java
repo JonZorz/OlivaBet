@@ -26,7 +26,7 @@ public class SlotJoyas extends JFrame {
        
       
        
-        lblPuntos = new JLabel ("5000");
+        lblPuntos = new JLabel ("8000");
         panelEmojis = new JPanel(new GridLayout(4, 9));
         
         
@@ -43,6 +43,7 @@ public class SlotJoyas extends JFrame {
         	@Override
             public void actionPerformed(ActionEvent e) {
                 cargarSlot();
+                restarPuntos(105);
             }
         });
 
@@ -55,24 +56,216 @@ public class SlotJoyas extends JFrame {
 
     private void cargarSlot() {
         panelEmojis.removeAll(); 
+        int totalBillete= 0,totalBolsa = 0,totalMoneda = 0, totalAnillo = 0,totalDiamante = 0, totalColgante = 0,totalK = 0,totalDiez=0,totalTrompeta=0,totalCorona=0; 
+        
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 9; j++) {
                 int aleatorioFila = (int) (Math.random() * emojis.length);
                 int aleatorioColumna = (int) (Math.random() * emojis[aleatorioFila].length);
                 emojiLabel = new JLabel(emojis[aleatorioFila][aleatorioColumna]);
-                emojiLabel.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
+                emojiLabel.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30)); 
                 emojiLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 panelEmojis.add(emojiLabel);
+                
+      
+                if (emojis[aleatorioFila][aleatorioColumna].equals("🪙")) {
+                    totalMoneda++;
+                }
+                if (emojis[aleatorioFila][aleatorioColumna].equals("K")) {
+                    totalK++;
+                }
+                if (emojis[aleatorioFila][aleatorioColumna].equals("10")) {
+                    totalDiez++;
+                }
+                if (emojis[aleatorioFila][aleatorioColumna].equals("💵")) {
+                    totalBillete++;
+                }
+                if (emojis[aleatorioFila][aleatorioColumna].equals("💰")) {
+                    totalBolsa++;
+                }
+                if (emojis[aleatorioFila][aleatorioColumna].equals("📯")) {
+                    totalTrompeta++;
+                }
+                if (emojis[aleatorioFila][aleatorioColumna].equals("👑")) {
+                    totalCorona++;
+                }
+                if (emojis[aleatorioFila][aleatorioColumna].equals("📿")) {
+                    totalColgante++;
+                }
+                if (emojis[aleatorioFila][aleatorioColumna].equals("💍")) {
+                    totalAnillo++;
+                }
+                if (emojis[aleatorioFila][aleatorioColumna].equals("💎")) {
+                    totalDiamante++;
+                }
+                
             }
         }
+
+        if(totalDiez == 6) {
+        	sumarPuntos(5);
+        }
+        if(totalDiez == 7) {
+        	sumarPuntos(10);
+        }
+        if(totalDiez == 8) {
+        	sumarPuntos(25);
+        }
+        if(totalDiez >= 9) {
+        	sumarPuntos(50);
+        }
+
+
+        if(totalK == 6) {
+        	sumarPuntos(10);
+        }
+        if(totalK == 7) {
+        	sumarPuntos(20);
+        }
+        if(totalK == 8) {
+        	sumarPuntos(50);
+        }
+        if(totalK >= 9) {
+        	sumarPuntos(100);
+        }
+        
+        
+        
+        if(totalTrompeta == 6) {
+        	sumarPuntos(15);
+        }
+        if(totalTrompeta == 7) {
+        	sumarPuntos(30);
+        }
+        if(totalTrompeta == 8) {
+        	sumarPuntos(75);
+        }
+        if(totalTrompeta >= 9) {
+        	sumarPuntos(150);
+        }
+        
+        
+        
+        if(totalBillete == 6) {
+        	sumarPuntos(20);
+        }
+        if(totalBillete == 7) {
+        	sumarPuntos(40);
+        }
+        if(totalBillete == 8) {
+        	sumarPuntos(100);
+        }
+        if(totalBillete >= 9) {
+        	sumarPuntos(200);
+        }
+        
+        
+        
+        
+        if(totalBolsa == 6) {
+        	sumarPuntos(25);
+        }
+        if(totalBolsa == 7) {
+        	sumarPuntos(50);
+        }
+        if(totalBolsa == 8) {
+        	sumarPuntos(125);
+        }
+        if(totalBolsa >= 9) {
+        	sumarPuntos(250);
+        }
+        
+        
+        if(totalMoneda == 6) {
+        	sumarPuntos(30);
+        }
+        if(totalMoneda == 7) {
+        	sumarPuntos(60);
+        }
+        if(totalMoneda == 8) {
+        	sumarPuntos(150);
+        }
+        if(totalMoneda >= 9) {
+        	sumarPuntos(300);
+        }
+        
+        
+        
+        
+        if(totalColgante == 6) {
+        	sumarPuntos(35);
+        }
+        if(totalColgante == 7) {
+        	sumarPuntos(70);
+        }
+        if(totalColgante == 8) {
+        	sumarPuntos(175);
+        }
+        if(totalColgante >= 9) {
+        	sumarPuntos(350);
+        }
+        
+        
+        if(totalAnillo == 6) {
+        	sumarPuntos(45);
+        }
+        if(totalAnillo == 7) {
+        	sumarPuntos(80);
+        }
+        if(totalAnillo == 8) {
+        	sumarPuntos(200);
+        }
+        if(totalAnillo >= 9) {
+        	sumarPuntos(400);
+        }
+        
+      
+        
+        if(totalDiamante == 6) {
+        	sumarPuntos(45);
+        }
+        if(totalDiamante == 7) {
+        	sumarPuntos(90);
+        }
+        if(totalDiamante == 8) {
+        	sumarPuntos(225);
+        }
+        if(totalDiamante >= 9) {
+        	sumarPuntos(450);
+        }
+        
+        
+        if(totalCorona == 6) {
+        	sumarPuntos(50);
+        }
+        if(totalDiamante == 7) {
+        	sumarPuntos(100);
+        }
+        if(totalDiamante == 8) {
+        	sumarPuntos(250);
+        }
+        if(totalDiamante >= 9) {
+        	sumarPuntos(500);
+        }
+        
         panelEmojis.revalidate();
         panelEmojis.repaint();
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(SlotJoyas::new);//Hace que doRun.run() se ejecute de forma asincrónica
+    private void restarPuntos(int puntos) {
+        int puntosActuales = Integer.parseInt(lblPuntos.getText());
+        int nuevosPuntos = puntosActuales - puntos;
+        lblPuntos.setText(String.valueOf(nuevosPuntos));
     }
     
-    		
+    private void sumarPuntos(int puntos) {
+        int puntosActuales = Integer.parseInt(lblPuntos.getText());
+        int nuevosPuntos = puntosActuales + puntos;
+        lblPuntos.setText(String.valueOf(nuevosPuntos));
+    }
+
+    public static void main(String[] args) {
+        new SlotJoyas();
+    }	
     
 }

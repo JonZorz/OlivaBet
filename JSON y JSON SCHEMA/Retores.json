@@ -1,0 +1,75 @@
+{
+    "$schema": "./RetoTres.schema.json",
+    "Casino": [
+        {"idUsuario": "7",
+        "nombreUsuario": "Carlos02",
+        "contrasena": "1b004679a38444ae4b430c7004324ab4",
+        "correoelectronico": "carlos02@gmail.com",
+        "fecha_Alta": "2024-05-07T09:35:32Z",
+        "IP_Registro": "192.168.1.12"
+        },
+        {"idUsuario": "39",
+        "nombreUsuario": "Gerard",
+        "contrasena": "e2ede96aac3148cf0e1f06bba6b40023",
+        "correoelectronico": "gerard@gmail.com",
+        "fecha_Alta": "2024-05-07T09:36:04Z",
+        "IP_Registro": "192.168.1.12"
+        },
+        {"idUsuario": "40",
+        "nombreUsuario": "Santi",
+        "contrasena": "60795e1235d40cebe8a127c3f71fd8f8",
+        "correoelectronico": "santiago@gmail.com",
+        "fecha_Alta": "2024-05-07T09:36:40Z",
+        "IP_Registro": "192.168.1.12"
+        },
+        {"idUsuario": "41",
+        "nombreUsuario": "Aitor52",
+        "contrasena": "902e3c762f6ae14290a1991f3c0ef66e",
+        "correoelectronico": "aitor1952@gmail.com",
+        "fecha_Alta": "2024-05-07T09:37:07Z",
+        "IP_Registro": "192.168.1.12"
+        },
+        {"idUsuario": "42",
+        "nombreUsuario": "Sofia19",
+        "contrasena": "16c6ec3fcaf21831c84a421b7ab5fac9",
+        "correoelectronico": "sofi012@gmail.com",
+        "fecha_Alta": "2024-05-07T09:37:45Z",
+        "IP_Registro": "192.168.1.12"
+        },
+        {"idUsuario": "43",
+        "nombreUsuario": "Javier",
+        "contrasena": "d20ca763dbdca166f6810d14870ba55e",
+        "correoelectronico": "javitxin@gmail.com",
+        "fecha_Alta": "2024-05-07T09:38:07Z",
+        "IP_Registro": "192.168.1.12"
+        },
+        {"idUsuario": "44",
+        "nombreUsuario": "Nicolas",
+        "contrasena": "0204773b81142772f41d5a8f47ec53ea",
+        "correoelectronico": "nicolass@gmail.com",
+        "fecha_Alta": "2024-05-07T09:38:31Z",
+        "IP_Registro": "192.168.1.12"
+        },
+        {"idUsuario": "45",
+        "nombreUsuario": "Pedro",
+        "contrasena": "7fc0395f9785e36cdb50e269d109fa32",
+        "correoelectronico": "pedro24@gmail.com",
+        "fecha_Alta": "2024-05-07T09:38:50Z",
+        "IP_Registro": "192.168.1.12"
+        },
+        {"idUsuario": "46",
+        "nombreUsuario": "Andres1",
+        "contrasena": "4300f6cddd45ec5bcdf211dd266772d2",
+        "correoelectronico": "andres1@gmail.com",
+        "fecha_Alta": "2024-05-07T09:39:17Z",
+        "IP_Registro": "192.168.1.12"
+        },
+        {"idUsuario":"47",
+        "nombreUsuario": "Diego",
+        "contrasena": "759e12350fc357e029e2388b4e91cb76",
+        "correoelectronico": "diego0@gmail.com",
+        "fecha_Alta": "2024-05-07T09:39:47Z",
+        "IP_Registro": "192.168.1.12"
+        }
+    ]
+}

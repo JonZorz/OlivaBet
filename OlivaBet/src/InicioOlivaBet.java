@@ -106,6 +106,15 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 	       
 	       lblimgnavidad.setSize(150,150);
 	       lblimgnavidad.setLocation(490,470);
+	       
+	       
+	       
+	  	 decorarBoton(btnFrutas);
+	  	 decorarBoton(btnAnimales);
+	  	 decorarBoton(btnJoyas);
+	  	 decorarBoton(btnHalloween);
+	  	 decorarBoton(btnNavidad);
+
 		
 	}
 
@@ -114,26 +123,42 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 		
 		if(e.getSource()==btnFrutas) {
 			new SlotFrutas();
+			setVisible(false);
 		}
 		if(e.getSource()==btnAnimales) {
 			new SlotAnimales();
+			setVisible(false);
 		}
 		if(e.getSource()==btnJoyas) {
 			new SlotJoyas();
+			setVisible(false);
 		}
 		if(e.getSource()==btnHalloween) {
 			new SlotHalloween();
+			setVisible(false);
 		}
 	
 		if(e.getSource()==btnNavidad) {
 			new SlotNavidad();
-		}
+			setVisible(false);		}
 
 	}
 
 	public static void main(String[] args) {
 		new InicioOlivaBet();
+	
 
 	}
+	
+	 private void decorarBoton(JButton boton) {
+		 boton.setBackground(new Color(62, 95, 231)); 
+		 boton.setForeground(Color.WHITE); 
+		 boton.setFocusPainted(false); // Desactivamos el pintado de enfoque al hacer clic
+		 boton.setFont(new Font("Arial", Font.BOLD, 14)); 
+		 
+		
+	       
+	    }
+	 
 
 }
