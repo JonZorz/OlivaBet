@@ -33,7 +33,7 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
 	      setSize(800, 300); 
 	      setLayout(null);
 	      setVisible(true);
-	      
+
 	      setLayout(new BorderLayout());
 	      
 	      btnRegistrase = new JButton ("Registrarse");

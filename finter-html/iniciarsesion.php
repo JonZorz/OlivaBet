@@ -1,8 +1,12 @@
+<?php
+      include("olivainicioSesion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/estilo.css">
@@ -11,11 +15,12 @@
 <body>
     
     <div class="modal-container">
-    <a href="./index.html">
+    <a href="./index.php">
     <img class="modal-img" src="./images/Oliva_Bet.png" width="200">
     </a>
     </div>
-    <form name="Registrarse" method="get" action="http://192.168.1.12/olivainicioSesion.php" onsubmit="return validarFormulario1()">
+
+    <form name="Registrarse" method="post" action="olivainicioSesion.php">
   
   
         <div class="form-row">
@@ -42,8 +47,10 @@
             Enviar
           </button>
         </div>
-        <p class="link"><a href="registrarse.html">¿Aun no tienes cuenta?</a></p>
+        <p class="link"><a href="registrarse.php">¿Aun no tienes cuenta?</a></p>
       </form>
+
+
 
 </body>
 </html>

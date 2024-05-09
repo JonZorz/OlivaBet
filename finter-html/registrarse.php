@@ -11,7 +11,7 @@
 <body>
     
     <div class="modal-container">
-      <a href="./index.html">
+      <a href="./index.php">
         <img class="modal-img" src="./images/Oliva_Bet.png" width="200">
         </a>
     </div>
@@ -42,7 +42,7 @@
             Enviar
           </button>
         </div>
-        <p class="link"><a href="iniciarsesion.html">¿Ya tienes cuenta?</a></p>
+        <p class="link"><a href="iniciarsesion.php">¿Ya tienes cuenta?</a></p>
       </form>
 
 </body>

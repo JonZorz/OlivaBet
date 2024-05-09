@@ -5,12 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SlotJoyas extends JFrame {
+public class SlotJoyas extends JFrame implements ActionListener{
 
     private String[][] emojis;
-    private JPanel panelEmojis;
+    private JPanel panelEmojis,panelSur;
     private JLabel lblPuntos;
     JLabel emojiLabel;
+    JButton btnJugar,btnVolver;
+
     public SlotJoyas() {
         setTitle("Slot Joyas");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,7 +28,7 @@ public class SlotJoyas extends JFrame {
        
       
        
-        lblPuntos = new JLabel ("8000");
+        lblPuntos = new JLabel (String.valueOf(InicioOlivaBet.puntuacion));        
         panelEmojis = new JPanel(new GridLayout(4, 9));
         
         
@@ -36,20 +38,18 @@ public class SlotJoyas extends JFrame {
         lblPuntos.setFont(new Font("Verdana",Font.BOLD,22));
         lblPuntos.setForeground(new Color (94, 16, 23));
         add(lblPuntos,BorderLayout.NORTH);
-      
-        JButton btnJugar = new JButton("Jugar");
-        btnJugar.addActionListener(new ActionListener() {
-            
-        	@Override
-            public void actionPerformed(ActionEvent e) {
-                cargarSlot();
-                restarPuntos(105);
-            }
-        });
-
-       
-        add(btnJugar, BorderLayout.SOUTH);
-
+        panelSur = new JPanel(new GridLayout(2, 1));
+        add(panelSur, BorderLayout.SOUTH);
+        
+        btnVolver = new JButton("Volver");
+        btnVolver.addActionListener(this); 
+        
+        btnJugar = new JButton("Jugar");
+        btnJugar.addActionListener(this); 
+        
+        panelSur.add(btnJugar);
+        panelSur.add(btnVolver);
+     
         setVisible(true);
     }
 
@@ -266,6 +266,20 @@ public class SlotJoyas extends JFrame {
 
     public static void main(String[] args) {
         new SlotJoyas();
-    }	
+    }
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btnJugar) {
+			  cargarSlot();
+	          restarPuntos(105); 
+			}
+			if(e.getSource() == btnVolver)
+			
+				new InicioOlivaBet();
+				InicioOlivaBet.puntuacion = Integer.parseInt(lblPuntos.getText());
+		
+	}	
     
 }

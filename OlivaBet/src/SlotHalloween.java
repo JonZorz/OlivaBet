@@ -5,12 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SlotHalloween extends JFrame {
+public class SlotHalloween extends JFrame implements ActionListener{
 
     private String[][] emojis;
-    private JPanel panelEmojis;
+    private JPanel panelEmojis,panelSur;
     private JLabel lblPuntos;
     JLabel emojiLabel;
+    JButton btnJugar,btnVolver;
+    
     public SlotHalloween() {
         setTitle("Slot Haloween");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,29 +26,27 @@ public class SlotHalloween extends JFrame {
         };
         
        
-        lblPuntos = new JLabel ("15000");
+        lblPuntos = new JLabel (String.valueOf(InicioOlivaBet.puntuacion));        
         panelEmojis = new JPanel(new GridLayout(10, 9));
-        
+        panelSur = new JPanel(new GridLayout(2, 1));
         
         add(panelEmojis, BorderLayout.CENTER);
-        lblPuntos.setFont(new Font("Verdana",Font.BOLD,22));
-        lblPuntos.setForeground(new Color (94, 16, 23));
-        add(lblPuntos,BorderLayout.NORTH);
+        lblPuntos.setFont(new Font("Verdana", Font.BOLD, 22));
+        lblPuntos.setForeground(new Color(94, 16, 23));
+        add(lblPuntos, BorderLayout.NORTH);
         
+        btnJugar = new JButton("Jugar");
+        btnJugar.addActionListener(this); 
+        	 
     
-        JButton btnJugar = new JButton("Jugar");
-        btnJugar.addActionListener(new ActionListener() {
-            
-        	@Override
-            public void actionPerformed(ActionEvent e) {
-                cargarSlot();
-                restarPuntos(850); 
-            }
-        });
-
+      
+        btnVolver = new JButton("Volver");
+        btnVolver.addActionListener(this);        
        
-        add(btnJugar, BorderLayout.SOUTH);
-
+    
+        add(panelSur, BorderLayout.SOUTH);
+        panelSur.add(btnJugar);
+        panelSur.add(btnVolver);
         setVisible(true);
     }
 
@@ -288,7 +288,17 @@ public class SlotHalloween extends JFrame {
     public static void main(String[] args) {
         new SlotHalloween();
     }
-    
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btnJugar) {
+		  cargarSlot();
+          restarPuntos(850); 
+		}
+		if(e.getSource() == btnVolver)
+			new InicioOlivaBet();
+			InicioOlivaBet.puntuacion = Integer.parseInt(lblPuntos.getText());
+	
+	}
     		
     
 }

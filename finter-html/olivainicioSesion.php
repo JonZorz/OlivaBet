@@ -1,0 +1,63 @@
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "olivabet";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Error de conexión: " . $conn->connect_error);
+    }
+
+    $nombreusuario = $_POST["nombreUsuario"];
+    $contrasena = md5($_POST["contrasena"]);
+    $correoelectronico = $_POST["correoelectronico"];
+
+    $sql = "SELECT nombreUsuario, contrasena, correoelectronico FROM usuarios WHERE nombreUsuario = '$nombreusuario' AND contrasena = '$contrasena' AND correoelectronico = '$correoelectronico'";
+
+    
+    
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+
+        $mierda = mysqli_prepare($conn, $sql);
+
+        if($mierda) {
+            echo "Felicidades, has iniciado sesión";
+
+            mysqli_stmt_execute($mierda);
+            $resultado_ejecucion = mysqli_stmt_get_result($mierda);
+            
+            $usuarios = mysqli_fetch_assoc($resultado_ejecucion);
+    
+            $_SESSION['nombreUsuario'] =  $usuarios['nombreUsuario'];
+
+            echo $_SESSION['nombreUsuario'];
+
+            exit();
+    
+        } else {
+            echo "Error en consulta";
+        }
+
+    } else {
+        echo "No se recoge info";
+        echo "Error al iniciar sesión: Usuario, Contraseña o Correo Electrónico incorrectos";
+    }
+
+
+    
+    
+    
+
+    
+
+    mysqli_close($conn);
+}
+?> 
