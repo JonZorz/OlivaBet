@@ -11,7 +11,8 @@ public class SlotNavidad extends JFrame implements ActionListener{
     private JPanel panelEmojis,panelSur;
     private JLabel lblPuntos;
     JLabel emojiLabel;
-    JButton btnJugar,btnVolver;
+    static JButton btnJugar;
+	JButton btnVolver;
     public SlotNavidad() {
         setTitle("Slot Haloween");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -289,6 +290,8 @@ public class SlotNavidad extends JFrame implements ActionListener{
 
     public static void main(String[] args) {
         new SlotNavidad();
+        if(InicioOlivaBet.puntuacion<15000)
+			btnJugar.setEnabled(false);
     }
     
     @Override
@@ -300,6 +303,9 @@ public class SlotNavidad extends JFrame implements ActionListener{
 		if(e.getSource() == btnVolver)
 			new InicioOlivaBet();
 			InicioOlivaBet.puntuacion = Integer.parseInt(lblPuntos.getText());
+			
+			
+		
 	}
     		
 }

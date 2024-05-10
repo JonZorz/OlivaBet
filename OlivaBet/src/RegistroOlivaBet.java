@@ -23,7 +23,8 @@ import javax.swing.SwingConstants;
 public class RegistroOlivaBet extends JFrame implements ActionListener {
 	JButton btnRegistrase,btnsesion;
 	JLabel lblnombreUsuario,lblcontrasena,lblcorreo,lbltitulo;
-	JTextField txtnombreUsuario,txtcontrasena,txtcorreo;
+	JTextField txtcontrasena,txtcorreo;
+	public static JTextField txtnombreUsuario;
 	JPanel panel,panel2;
 
 	
@@ -99,7 +100,7 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
         String nombreUsuario = txtnombreUsuario.getText();
         String contrasena = txtcontrasena.getText();
         String correoElectronico = txtcorreo.getText();
-       
+       int puntosIniciales = 5000;
         String encriptado = encriptacion(contrasena);
         try {
         	long time = System.currentTimeMillis();
@@ -113,7 +114,7 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
              
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/olivabet", "root", "");
 
-            String sql = "INSERT INTO usuarios (nombreUsuario, contrasena, correoelectronico,fecha_Alta,IP_Registro) VALUES ('"+ nombreUsuario+"','"+encriptado+"','"+ correoElectronico+"','"+timestamp+"','"+(my_localhost.getHostAddress()).trim()+"')";
+            String sql = "INSERT INTO usuarios (nombreUsuario, contrasena, correoelectronico,puntos,fecha_Alta,IP_Registro) VALUES ('"+ nombreUsuario+"','"+encriptado+"','"+ correoElectronico+"','"+puntosIniciales+"','"+timestamp+"','"+(my_localhost.getHostAddress()).trim()+"')";
             PreparedStatement stmt = conn.prepareStatement(sql);
             System.out.println(sql);
             

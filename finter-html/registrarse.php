@@ -15,7 +15,7 @@
         <img class="modal-img" src="./images/Oliva_Bet.png" width="200">
         </a>
     </div>
-    <form name="Registrarse" method="get" action="http://192.168.1.12/olivaInsert.php" onsubmit="return validarFormulario1()">
+    <form name="Registrarse" method="get" action="./olivaInsert.php" onsubmit="return validarFormulario1()">
   
   
         <div class="form-row">
@@ -33,7 +33,7 @@
           </div>
           <div class="form-group col-lg-6">
             <input type="text" class="form-control" name="correoelectronico" placeholder="Correo Electrónico" />
-            <input type="hidden" name="id_Usuario">
+            <input type="hidden" name="puntos">
           </div>
         </div>
      

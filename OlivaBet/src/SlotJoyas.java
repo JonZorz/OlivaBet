@@ -11,7 +11,8 @@ public class SlotJoyas extends JFrame implements ActionListener{
     private JPanel panelEmojis,panelSur;
     private JLabel lblPuntos;
     JLabel emojiLabel;
-    JButton btnJugar,btnVolver;
+    static JButton btnJugar;
+	JButton btnVolver;
 
     public SlotJoyas() {
         setTitle("Slot Joyas");
@@ -266,6 +267,8 @@ public class SlotJoyas extends JFrame implements ActionListener{
 
     public static void main(String[] args) {
         new SlotJoyas();
+    	if(InicioOlivaBet.puntuacion<8000)
+			btnJugar.setEnabled(false);
     }
 
 
@@ -278,7 +281,9 @@ public class SlotJoyas extends JFrame implements ActionListener{
 			if(e.getSource() == btnVolver)
 			
 				new InicioOlivaBet();
-				InicioOlivaBet.puntuacion = Integer.parseInt(lblPuntos.getText());
+			InicioOlivaBet.puntuacion = Integer.parseInt(lblPuntos.getText());
+		
+			
 		
 	}	
     

@@ -1,3 +1,13 @@
+<?php
+if(!isset($_SESSION['nombreUsuario'])) {
+  echo "Sesion iniciada";
+} else {
+  header("Location: iniciarsesion.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -37,13 +47,13 @@
     <div class="modal-container">
         <img class="modal-img" src="images/Oliva_Bet.png" >
         <h2 id="eliminar" class="title">¡¡Bienvenido a Oliva Bet!!</h2>
-        <p id="eliminar_dos" class="paragraph">Inicia sesion en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
+        <p id="eliminar_dos" class="paragraph">Inicia sesion en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta, regístrate</p>
         <div id="eliminar_tres" class="btns">
           <button>
-            <a href="registrarse.php" target="_blank" class="open-guide">Registrate</a>
+            <a href="registrarse.php" target="_blank" class="open-guide">Regístrate</a>
           </button>
           <button>
-            <a href="iniciarsesion.php" target="_blank" class="open-guide">Iniciar Sesion</a>
+            <a href="iniciarsesion.php" target="_blank" class="open-guide">Iniciar Sesión</a>
           </button>
         </div>
 
@@ -85,11 +95,11 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav  ">
-                <li class="nav-item active ">
-                  <a class="nav-link" href="index.php">Inicio </a>
+              <li class="nav-item active ">
+                  <a class="nav-link" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="about.php"> Nosotros </a>
+                  <a class="nav-link" href="about.php"> Nosotros</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="service.php">Tragaperras</a>
@@ -97,10 +107,10 @@
                 <li class="nav-item">
                   <a class="nav-link" onclick="mostrarAaaaa()">Cuenta</a>
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>
-                      Cuenta
-                    </span>
                   </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cuenta.php">Mi perfil</a>
                 </li>
                 <form class="form-inline justify-content-center">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
@@ -142,7 +152,7 @@
                     FRUTAS
                   </h5>
                   <p>
-                    <b>Desbloquear juego:</b> Gratis<br><b>Cada tirada:</b> 350 créditos<br> <b>Ganancias:</b> 5 frutas iguales x0.5, 6 frutas iguales x1,<br>7 frutas iguales x1.5, 8 frutas iguales x2<br><b>Valor de menos a más:</b> Pomelo, Limón, Naranja, Piña, Banana, Sandía, Coco, Uva, Cereza, Fresa
+                    <b>Desbloquear juego:</b> Gratis<br><b>Cada tirada:</b> 350 créditos<br> <b>Ganancias:</b> 5 frutas iguales x0.5, 6 frutas iguales x1,<br>7 frutas iguales x1.5, 8 frutas iguales x2<br><b>Valor de menos a más:</b> Pomelo, Limón, Naranja, Piña, Plátano, Sandía, Coco, Uva, Cereza, Fresa
                   </p>
                 </div>
               </div>
@@ -172,7 +182,7 @@
                     JOYAS
                   </h5>
                   <p>
-                    <b>Desbloquear juego:</b> 8000 créditos<br><b>Cada tirada:</b> 350 créditos<br> <b>Ganancias:</b> 2 símbolos iguales x3,<br>  3 símbolos iguales x5<br><b>Valor de menos a más:</b> Numero "10", Letra "K", Trompeta del Rey, Billete, Bolsa de Dinero, Moneda de Copenhague, Colgante, Anillo, Diamante, Corona
+                    <b>Desbloquear juego:</b> 8000 créditos<br><b>Cada tirada:</b> 105 créditos<br> <b>Ganancias:</b> 2 símbolos iguales x3,<br>  3 símbolos iguales x5<br><b>Valor de menos a más:</b> Número "10", Letra "K", Trompeta del Rey, Billete, Bolsa de Dinero, Moneda de Copenhague, Colgante, Anillo, Diamante, Corona
                   </p>
                 </div>
               </div>
@@ -187,7 +197,7 @@
                     HALLOWEEN
                   </h5>
                   <p>
-                    <b>Desbloquear juego:</b> 15000 créditos / Gratis en su fecha<br><b>Cada tirada:</b> 850 créditos<br> <b>Ganancias:</b> 8 símbolos iguales x0.5, 9 símbolos iguales x1, 10 símbolos iguales x2, 11 símbolos iguales x4, 12 símbolos iguales x7<br><b>Valor de menos a más:</b> Numero "10", Letra "K", Trompeta del Rey, Billete, Bolsa de Dinero, Moneda de Copenhague, Colgante, Anillo, Diamante, Corona
+                    <b>Desbloquear juego:</b> 15000 créditos / Gratis en su fecha<br><b>Cada tirada:</b> 850 créditos<br> <b>Ganancias:</b> 8 símbolos iguales x0.5, 9 símbolos iguales x1, 10 símbolos iguales x2, 11 símbolos iguales x4, 12 símbolos iguales x7<br><b>Valor de menos a más:</b> Calavera, Cuchillo, Murciélago, Vampiro, Fantasma, Zombi, Brujo, Bruja, Calabaza, Payaso
                   </p>
                 </div>
               </div>
@@ -199,10 +209,11 @@
                 </div>
                 <div class="detail-box">
                   <h5>
+
                     NAVIDAD
                   </h5>
                   <p>
-                  <b>Desbloquear juego:</b> 15000 créditos  / Gratis en su fecha<br><b>Cada tirada:</b> 1050 créditos<br> <b>Ganancias:</b> 8 símbolos iguales x0.5, 9 símbolos iguales x1, 10 símbolos iguales x2, 11 símbolos iguales x4, 12 símbolos iguales x7<br><b>Valor de menos a más:</b> Calcetines, Vela, Pino, Campana, Regalo, Muñeco de nieve, Estrella, Trineo, Reno, Santa
+                  <b>Desbloquear juego:</b> 15000 créditos  / Gratis en su fecha<br><b>Cada tirada:</b> 850 créditos<br> <b>Ganancias:</b> 8 símbolos iguales x0.5, 9 símbolos iguales x1, 10 símbolos iguales x2, 11 símbolos iguales x4, 12 símbolos iguales x7<br><b>Valor de menos a más:</b> Calcetines, Vela, Pino, Campana, Regalo, Muñeco de nieve, Estrella, Trineo, Reno, Santa
                   </p>
                 </div>
               </div>
@@ -212,7 +223,7 @@
         </div>
       </div>
       <div class="btn-box">
-      <a href="../myw3schoolsimage.jpg" download>
+      <a href="tra1.jpeg" download>
            Descargar 
         </a>
       </div>

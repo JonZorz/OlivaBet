@@ -10,7 +10,8 @@ public class SlotAnimales extends JFrame implements ActionListener{
     private String[][] emojis;
     private JPanel panelEmojis,panelSur;
     private JLabel lblPuntos,emojiLabel;
-    JButton btnJugar,btnVolver;
+    static JButton btnJugar;
+	JButton btnVolver;
     public SlotAnimales() {
         setTitle("Slot Animales");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -257,6 +258,8 @@ public class SlotAnimales extends JFrame implements ActionListener{
 
     public static void main(String[] args) {
         new SlotAnimales();
+        if(InicioOlivaBet.puntuacion<350)
+			btnJugar.setEnabled(false);
     }
     
 	@Override

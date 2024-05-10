@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/estilo.css">
-    <title>Iniciar Sesion</title>
+    <title>Iniciar Sesión</title>
 </head>
 <body>
     
@@ -20,7 +20,7 @@
     </a>
     </div>
 
-    <form name="Registrarse" method="post" action="olivainicioSesion.php">
+    <form name="Iniciarsesion" method="POST" action="./olivainicioSesion.php">
   
   
         <div class="form-row">
@@ -29,7 +29,7 @@
           <input type="hidden" name="table" value ="usuarios">
           <input type="hidden" name="idUsuario">
           <div class="form-group col">
-            <input type="text" class="form-control" name ="nombreUsuario" placeholder="Nombre de Usuario" required />
+            <input type="text" class="form-control" id="nombreUsuario" name ="nombreUsuario" placeholder="Nombre de Usuario" required />
           </div>
         </div>
         <div class="form-row">

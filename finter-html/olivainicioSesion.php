@@ -26,19 +26,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
 
-        $mierda = mysqli_prepare($conn, $sql);
+        $preparar = mysqli_prepare($conn, $sql);
 
-        if($mierda) {
+        if($preparar) {
             echo "Felicidades, has iniciado sesión";
 
-            mysqli_stmt_execute($mierda);
-            $resultado_ejecucion = mysqli_stmt_get_result($mierda);
+            mysqli_stmt_execute($preparar);
+            $resultado_ejecucion = mysqli_stmt_get_result($preparar);
             
             $usuarios = mysqli_fetch_assoc($resultado_ejecucion);
     
-            $_SESSION['nombreUsuario'] =  $usuarios['nombreUsuario'];
+            $_SESSION['usuario'] =  $_POST['nombreUsuario'];
+            $_SESSION['correo'] =  $_POST['correoelectronico'];
+            
+            echo $_SESSION['usuario'];
 
-            echo $_SESSION['nombreUsuario'];
+            echo $_SESSION['correo'];
+
+           
+
 
             exit();
     

@@ -1,3 +1,12 @@
+<?php
+
+      include("olivainicioSesion.php");
+      
+ 
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +21,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/Oliva_Bet.png" type="image/x-icon">
-  <title> Nosotros Oliva Bet</title>
+  <title>Tragaperras Oliva Bet</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -46,6 +55,8 @@
             <a href="iniciarsesion.php" target="_blank" class="open-guide">Iniciar Sesión</a>
           </button>
         </div>
+
+
 
         
         <a href="index.php" class="close">&times;</a>
@@ -102,7 +113,7 @@
                 </li>
                 <form class="form-inline justify-content-center">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    
+                   
                   </button>
                 </form>
               </ul>
@@ -112,37 +123,38 @@
       </div>
     </header>
     <!-- end header section -->
+
   </div>
 
-
-  <!-- about section -->
-
+  <!-- service section -->
   <section class="about_section layout_padding">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-5 offset-md-1">
-          <div class="detail-box pr-md-2">
             <div class="heading_container">
-              <h2 class="">
-                Nuestra historia
-              </h2>
+                <h4>Bienvenido:</h4>
+                
             </div>
-            <p class="detail_p_mt">
-              Somos un grupo de jovenes talentos del Casino(Iñaki, Mario, Julen, Jon, Aaron) que gracias a la ludopatia que padecemos desde el 2021 hemos generado millones de ganancias y por eso hemos decidido abrir este negocio. Nuestro objetivo es crear futuras promesas en la especialidad de las tragaperras sin tener que invertir dinero.
-            </p>
-            
-          </div>
-        </div>
-        <div class="col-md-6 px-0">
-          <div class="img-box ">
-            <img src="./tra1.jpeg" class="box_img">
-          </div>
+            <div class="container py-3">
+                <div class="row">
+                <div class="row col-sm-6 col-md-6 col-lg-6">
+
+                    <p>Nombre de Usuario: <?php echo $_SESSION['usuario'] ;?></p>
+                    <br><br>
+                    <p>Correo Electrónico:<?php echo $_SESSION['correo'] ;?> </p>
+                   
+                </div>  
+</div> 
+<div class="b">
+<p><a href="cerrars.php">Cerrar Sesión</a></p>
+
+</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- about section ends -->
+  <!-- service section ends -->
 
   <!-- info section -->
   <section class="info_section ">
@@ -192,7 +204,7 @@
   <footer class="footer_section">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> Derechos Reservados
+        &copy; <span id="displayYear"></span> Derechos reservados
         
       </p>
     </div>
@@ -230,6 +242,7 @@
    
       
     </script>
+
 
 
 </body>

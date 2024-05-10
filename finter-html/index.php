@@ -1,6 +1,11 @@
 <?php
+
       include("olivainicioSesion.php");
-      echo $_SESSION['nombreUsuario'];
+      
+      if(isset($_SESSION['usuario']))
+        echo $_SESSION['usuario'];
+      else
+       echo 'No está iniciada la sesión';
 ?>
 
 
@@ -44,17 +49,16 @@
     <div class="modal-container">
         <img class="modal-img" src="images/Oliva_Bet.png" >
         <h2 id="eliminar" class="title">¡¡Bienvenido a Oliva Bet!! </h2>
-        <p id="eliminar_dos" class="paragraph">Inicia sesion en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
+        <p id="eliminar_dos" class="paragraph">Inicia sesión en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta, regístrate</p>
         <div id="eliminar_tres" class="btns">
-            <a href="registrarse.php" target="_blank" class="open-guide">Registrate</a>
-            <a href="iniciarsesion.php" target="_blank" class="open-guide">Iniciar Sesion</a>
+            <a href="registrarse.php" target="_blank" class="open-guide">Regístrate</a>
+            <a href="iniciarsesion.php" target="_blank" class="open-guide">Iniciar Sesión</a>
         </div>
         
         <a href="index.php" class="close">&times;</a>
     </div>
   </section>
   
-  <?php echo $_SESSION['nombreUsuario'];  ?>
   
   <div class="hero_area">
     <div class="hero_bg_box">
@@ -89,10 +93,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav  ">
                 <li class="nav-item active ">
-                  <a class="nav-link" href="index.php">Inicio </a>
+                  <a class="nav-link" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="about.php"> Nosotros </a>
+                  <a class="nav-link" href="about.php"> Nosotros</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="service.php">Tragaperras</a>
@@ -101,8 +105,9 @@
                   <a class="nav-link" onclick="mostrarAaaaa()">Cuenta</a>
                     <i class="fa fa-user" aria-hidden="true"></i>
                   </a>
-
-                  
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cuenta.php">Mi Perfil</a>
                 </li>
                 <form class="form-inline justify-content-center">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
@@ -126,7 +131,7 @@
                 <div class="col-lg-10 col-md-11 mx-auto">
                   <div class="detail-box">
                     <h1>
-                      La mejor experiencia <br>
+                      La mejor experiencia<br>
                       ¡¡Juega Gratis!!
                     </h1>
                     <p>
@@ -143,11 +148,11 @@
                 <div class="col-lg-10 col-md-11 mx-auto">
                   <div class="detail-box">
                     <h1>
-                      ¡Registrate ya!<br>
-                      ¡¡Y prueva todas nuestras Slots!!
+                      ¡Regístrate ya!<br>
+                      ¡¡Y prueba todas nuestras Slots!!
                     </h1>
                     <p>
-                      Tenemos todo tipo de Slot disponible para poder probar este tipo de juego. Diviertéte, juega, disfruta de todos nuestros servicios.
+                      Tenemos todo tipo de Slot disponible para poder probar este tipo de juego. Diviértete, juega, disfruta de todos nuestros servicios.
                     </p>
                     <div class="btn-box">
                       <a href="registrarse.php" target="_blank" class="btn1">
@@ -165,7 +170,7 @@
                 <div class="col-lg-10 col-md-11 mx-auto">
                   <div class="detail-box">
                     <h1>
-                      Te esperamos <br>
+                      Te esperamos<br>
                       ¡¡Únete y empieza con 5000 créditos!!
                     </h1>
                     <p>
@@ -189,10 +194,10 @@
     <div class="container">
       <div class="heading_container heading_center ">
         <h2 class="">
-          Nuestros servicios 
+          Nuestros servicios
         </h2>
         <p class="col-lg-8 px-0">
-          ¡¡En OlivaBet podrás difrutas de máquinas de distintas temáticas!!
+          ¡¡En Oliva Bet podrás difrutas de máquinas de distintas temáticas!!
         </p>
       </div>
       <div class="service_container">
@@ -209,7 +214,7 @@
                   </h5>
                   <p>
                     Si no desea retirar el saldo, seguirá con su cantidad obtenida hasta que se quede sin nada.
-                    Si tiene mucho, retírelo para empezar de nuevo y quien sabe si entrar en el ranking.
+                    Si tiene mucho, retírelo para empezar de nuevo y quién sabe si entrar en el ranking.
                   </p>
                 </div>
               </div>
@@ -224,7 +229,7 @@
                     Recordatorio
                   </h5>
                   <p>
-                   Estas son máquinas de pruebe, recuerde que no es bueno la apuesta en exceso en este tipo de juegos.
+                   Estas son máquinas de prueba, recuerde que no es bueno la apuesta en exceso en este tipo de juegos.
                   </p>
                 </div>
               </div>

@@ -7,6 +7,8 @@ import java.net.InetAddress;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -203,7 +205,7 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 		
 		
 		if(e.getSource()==btnRanking) {
-			verRaknking();		
+			verRanking();		
 			}
 		if(e.getSource()==btnCobrar) {
 			Cobro();
@@ -236,39 +238,67 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 		
 	       
 	    }
-	 protected void verRaknking() {
-		  
-		 
+	 protected void verRanking() {
+		    try {
+		        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/olivabet", "root", "");
+		        Statement stmt = conn.createStatement();
+		        String sql = "SELECT nombreUsuario, puntos FROM usuarios ORDER BY puntos DESC LIMIT 5";
+		        ResultSet rs = stmt.executeQuery(sql);
 
-	    }
-	 
+		        String ranking = "Top 5 Usuarios:\n\n";
+		        
+		        int posicion = 1;
+		        while (rs.next()) {
+		            String nombreUsuario = rs.getString("nombreUsuario");
+		            int puntos = rs.getInt("puntos");
+
+		            ranking += posicion + ". " + nombreUsuario + ": " + puntos + " puntos\n";
+		            posicion++;
+		        }
+
+		        JOptionPane.showMessageDialog(this, ranking, "Top 5", JOptionPane.INFORMATION_MESSAGE);
+
+		        rs.close();
+		        stmt.close();
+		        conn.close();
+		    } catch (Exception e) {
+		        JOptionPane.showMessageDialog(this, "Error al obtener el ranking: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+		    }
+		}
+
+
+
 	 protected void Cobro() {
-		 
-	        try {
-	  
-	            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/olivabet", "root", "");
+		    try {
+		      
+		        int nuevaPuntuacion = puntuacion;
 
-	            String sql = "INSERT INTO rankingusuarios (nombreUsuario, id_Usuario, nombreUsuarioRanking,puntos) VALUES ()";
-	            PreparedStatement stmt = conn.prepareStatement(sql);
-	            System.out.println(sql);
-	            
-	         
-	           stmt.executeUpdate(sql);
-	          
-	           
-	           stmt.close();//cerrar el statement
+		        String nombreUsuario = RegistroOlivaBet.txtnombreUsuario.getText();
 
-	           conn.close();//cerrar la conexión con la base de datos
-	           
-	           
-				JOptionPane.showMessageDialog(this, "Felicidades, te has registrado","Registro",JOptionPane.INFORMATION_MESSAGE);
+		        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/olivabet", "root", "");
 
-	            new InicioOlivaBet();
-	        } catch (Exception e) {
-	            System.out.println("Error al insertar datos: " + e);
-	           
-	        }
-	 }
+		        String sql = "UPDATE usuarios SET puntos = " + nuevaPuntuacion + " WHERE nombreUsuario = '" + nombreUsuario + "'";
+		        
+		        Statement stmt = conn.createStatement();
+
+		        int filasActualizadas = stmt.executeUpdate(sql);
+
+		        if (filasActualizadas > 0) {
+		            JOptionPane.showMessageDialog(this, "Se han actualizado los puntos del jugador", "Actualización exitosa", JOptionPane.INFORMATION_MESSAGE);
+		        } else {
+		            JOptionPane.showMessageDialog(this, "No se han actualizado los puntos del jugador", "Error de actualización", JOptionPane.ERROR_MESSAGE);
+		        }
+
+		        stmt.close();
+		        conn.close();
+		       
+		    } catch (Exception e) {
+		        System.out.println("Error al actualizar los puntos del jugador: " + e);
+		        JOptionPane.showMessageDialog(this, "Error al actualizar los puntos del jugador", "Error de actualización", JOptionPane.ERROR_MESSAGE);
+		    }
+		}
+
+
 	 
 
 }

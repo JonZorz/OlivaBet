@@ -8,7 +8,8 @@ public class SlotFrutas extends JFrame implements ActionListener {
 	private String[][] emojis;
 	private JPanel panelEmojis, panelSur;
 	private JLabel lblPuntos, emojiLabel;
-	JButton btnJugar, btnVolver;
+	static JButton btnJugar;
+	JButton btnVolver;
 
 	public SlotFrutas() {
 		setTitle("Slot Frutas");
@@ -238,6 +239,8 @@ public class SlotFrutas extends JFrame implements ActionListener {
 
 	public static void main(String[] args) {
 		new SlotFrutas();
+		if(InicioOlivaBet.puntuacion<350)
+			btnJugar.setEnabled(false);
 	}
 
 	@Override
