@@ -249,6 +249,9 @@ public class SlotJoyas extends JFrame implements ActionListener{
         	sumarPuntos(500);
         }
         
+    	if(InicioOlivaBet.puntuacion <105)
+        	btnJugar.setEnabled(false);
+        
         panelEmojis.revalidate();
         panelEmojis.repaint();
     }
@@ -267,8 +270,7 @@ public class SlotJoyas extends JFrame implements ActionListener{
 
     public static void main(String[] args) {
         new SlotJoyas();
-    	if(InicioOlivaBet.puntuacion<8000)
-			btnJugar.setEnabled(false);
+    	
     }
 
 

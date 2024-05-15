@@ -23,6 +23,7 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 	static JButton btnJoyas;
 	static JButton btnHalloween;
 	static JButton btnNavidad;
+	static JButton btnReset;
 	JButton btnCobrar;
 	JButton btnRanking;
 	JButton btnReiniciar;
@@ -65,19 +66,19 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 	      
 	      
 	       lbltitulo = new JLabel ("Elige Máquina");
-	       imgfrutas = new ImageIcon("F:\\DAW1\\RETOS\\RETO3\\imagenes Java\\frutas.png");
+	       imgfrutas = new ImageIcon("frutas.png");
 	       lblimgfrutas = new JLabel(imgfrutas);
 	       
-	       imganimales = new ImageIcon("F:\\DAW1\\RETOS\\RETO3\\imagenes Java\\animales.png");
+	       imganimales = new ImageIcon("animales.png");
 	       lblimganimales = new JLabel(imganimales);
 	       
-	       imgjoyas = new ImageIcon("F:\\DAW1\\RETOS\\RETO3\\imagenes Java\\joyas.png");
+	       imgjoyas = new ImageIcon("joyas.png");
 	       lblimgjoyas = new JLabel(imgjoyas);
 	       
-	       imghalloween = new ImageIcon("F:\\DAW1\\RETOS\\RETO3\\imagenes Java\\halloween.png");
+	       imghalloween = new ImageIcon("halloween.png");
 	       lblimghalloween = new JLabel(imghalloween);
 	       
-	       imgnavidad = new ImageIcon("F:\\DAW1\\RETOS\\RETO3\\imagenes Java\\navidad.png");
+	       imgnavidad = new ImageIcon("navidad.png");
 	       lblimgnavidad = new JLabel(imgnavidad);
 	     
 	       lblPuntos = new JLabel (String.valueOf(puntuacion));
@@ -113,6 +114,11 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 	       add(btnNavidad);
 	       btnNavidad.setSize(200,100);
 	       btnNavidad.setLocation(670,500);
+	       
+	       
+	       add(btnReiniciar);
+	       btnReiniciar.setSize(200,100);
+	       btnReiniciar.setLocation(670,50);
 	       
 	       add(btnCobrar);
 	       btnCobrar.setSize(300,100);
@@ -166,6 +172,7 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 	 	
 	  	decorarBoton2(btnCobrar);
 	  	decorarBoton2(btnRanking);
+	  	decorarBoton2(btnReiniciar);
 	  	
 		if(puntuacion<8000)
 			btnJoyas.setEnabled(false);
@@ -173,6 +180,11 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 			btnHalloween.setEnabled(false);
 			btnNavidad.setEnabled(false);
 		}
+			if(InicioOlivaBet.puntuacion <350)
+	        	btnFrutas.setEnabled(false);
+			if(InicioOlivaBet.puntuacion <350)
+	        	btnAnimales.setEnabled(false);
+		
 	}
 
 	@Override
@@ -210,6 +222,10 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 		if(e.getSource()==btnCobrar) {
 			Cobro();
 		}
+		if(e.getSource()==btnReiniciar) {
+			puntuacion = 5000;
+			lblPuntos.setText(String.valueOf(puntuacion));
+		}
 	}
 
 	public static void main(String[] args) {
@@ -240,7 +256,7 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 	    }
 	 protected void verRanking() {
 		    try {
-		        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/olivabet", "root", "");
+		        Connection conn = DriverManager.getConnection("jdbc:mysql://databaseolivabet.c7eigymywlgc.us-east-1.rds.amazonaws.com:3306/olivabet", "crupiermaestro", "sasamkdojojfaojjokefju9e");
 		        Statement stmt = conn.createStatement();
 		        String sql = "SELECT nombreUsuario, puntos FROM usuarios ORDER BY puntos DESC LIMIT 5";
 		        ResultSet rs = stmt.executeQuery(sql);
@@ -275,7 +291,7 @@ public class InicioOlivaBet extends JFrame implements ActionListener {
 
 		        String nombreUsuario = RegistroOlivaBet.txtnombreUsuario.getText();
 
-		        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/olivabet", "root", "");
+		        Connection conn = DriverManager.getConnection("jdbc:mysql://databaseolivabet.c7eigymywlgc.us-east-1.rds.amazonaws.com:3306/olivabet", "crupiermaestro", "sasamkdojojfaojjokefju9e");
 
 		        String sql = "UPDATE usuarios SET puntos = " + nuevaPuntuacion + " WHERE nombreUsuario = '" + nombreUsuario + "'";
 		        

@@ -1,6 +1,14 @@
+<?php
+      include("olivainicioSesion.php");
+if(isset($_SESSION['usuario']))
+  echo $_SESSION['usuario'];
+else
+ echo 'no iniciada la sesión';
+?>
+
 <!DOCTYPE html>
 <html>
-
+  
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -33,20 +41,15 @@
 </head>
 
 <body class="sub_page">
-  <section class="modal" id="mostrar" style="display: none;">
+<section class="modal" id="mostrar" style="display: none;">
     <div class="modal-container">
         <img class="modal-img" src="images/Oliva_Bet.png" >
-        <h2 id="eliminar" class="title">¡¡Bienvenido a Oliva Bet!!</h2>
-        <p id="eliminar_dos" class="paragraph">Inicia sesion en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
+        <h2 id="eliminar" class="title">¡¡Bienvenido a Oliva Bet!! </h2>
+        <p id="eliminar_dos" class="paragraph">Inicia sesión en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta regístrate</p>
         <div id="eliminar_tres" class="btns">
-          <button>
             <a href="registrarse.php" target="_blank" class="open-guide">Regístrate</a>
-          </button>
-          <button>
             <a href="iniciarsesion.php" target="_blank" class="open-guide">Iniciar Sesión</a>
-          </button>
         </div>
-
         
         <a href="index.php" class="close">&times;</a>
     </div>
@@ -100,6 +103,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="cuenta.php">Mi perfil</a>
                 </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="paginaRanking.php"> Ranking </a>
+                </li>
                 <form class="form-inline justify-content-center">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                     
@@ -128,7 +134,9 @@
               </h2>
             </div>
             <p class="detail_p_mt">
-              Somos un grupo de jovenes talentos del Casino(Iñaki, Mario, Julen, Jon, Aaron) que gracias a la ludopatia que padecemos desde el 2021 hemos generado millones de ganancias y por eso hemos decidido abrir este negocio. Nuestro objetivo es crear futuras promesas en la especialidad de las tragaperras sin tener que invertir dinero.
+              Hemos tenido una idea de crear un casino web de forma gratuita, ya que este tipo de servicio es de pago. Por otro lado, hemos querido implementar rankings para que haya más competencia.
+              <br><br>Somos un grupo de estudiantes con grandes ambiciones de crear cosas innovadoras y hemos llegado a la conclusión de que podemos ayudar a la gente y que la perspectiva de las máquinas tragaperras cambien.
+              <br><br>Hemos decidido hacer este proyecto debido al gasto en este tipo de juegos, hemos tomado conciencia del daño que hacen estos juegos y por la diversión de los usuarios.
             </p>
             
           </div>

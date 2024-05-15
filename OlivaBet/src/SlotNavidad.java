@@ -271,7 +271,8 @@ public class SlotNavidad extends JFrame implements ActionListener{
         if (totalSanta >= 12) {
             sumarPuntos(700);
         }
-     
+        if(InicioOlivaBet.puntuacion <850)
+        	btnJugar.setEnabled(false);
         panelEmojis.revalidate();
         panelEmojis.repaint();
     }
@@ -290,8 +291,7 @@ public class SlotNavidad extends JFrame implements ActionListener{
 
     public static void main(String[] args) {
         new SlotNavidad();
-        if(InicioOlivaBet.puntuacion<15000)
-			btnJugar.setEnabled(false);
+      
     }
     
     @Override

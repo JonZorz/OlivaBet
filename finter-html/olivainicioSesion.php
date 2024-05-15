@@ -3,9 +3,9 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $servername = "databaseolivabet.c7eigymywlgc.us-east-1.rds.amazonaws.com";
+    $username = "crupiermaestro";
+    $password = "sasamkdojojfaojjokefju9e";
     $dbname = "olivabet";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -38,14 +38,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
             $_SESSION['usuario'] =  $_POST['nombreUsuario'];
             $_SESSION['correo'] =  $_POST['correoelectronico'];
+            $_SESSION['puntos'] = $_POST['puntos'];
             
             echo $_SESSION['usuario'];
 
             echo $_SESSION['correo'];
 
+            echo $_SESSION['puntos'];
+
            
 
-            header("Location:index.php");
+            header("Location:cuenta.php");
             exit();
     
         } else {
@@ -58,11 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    
-    
-    
-
-    
 
     mysqli_close($conn);
 }

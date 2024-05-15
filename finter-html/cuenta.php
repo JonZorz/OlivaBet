@@ -2,7 +2,6 @@
 
       include("olivainicioSesion.php");
       
- 
 ?>
 
 
@@ -21,7 +20,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/Oliva_Bet.png" type="image/x-icon">
-  <title>Tragaperras Oliva Bet</title>
+  <title>Mi Perfil</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -42,22 +41,15 @@
 </head>
 
 <body class="sub_page">
-  <section class="modal" id="mostrar" style="display: none;">
+<section class="modal" id="mostrar" style="display: none;">
     <div class="modal-container">
         <img class="modal-img" src="images/Oliva_Bet.png" >
-        <h2 id="eliminar" class="title">¡¡Bienvenido a Oliva Bet!!</h2>
-        <p id="eliminar_dos" class="paragraph">Inicia sesion en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta registrate</p>
+        <h2 id="eliminar" class="title">¡¡Bienvenido a Oliva Bet!! </h2>
+        <p id="eliminar_dos" class="paragraph">Inicia sesión en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta regístrate</p>
         <div id="eliminar_tres" class="btns">
-          <button>
             <a href="registrarse.php" target="_blank" class="open-guide">Regístrate</a>
-          </button>
-          <button>
             <a href="iniciarsesion.php" target="_blank" class="open-guide">Iniciar Sesión</a>
-          </button>
         </div>
-
-
-
         
         <a href="index.php" class="close">&times;</a>
     </div>
@@ -111,6 +103,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="cuenta.php">Mi perfil</a>
                 </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="paginaRanking.php"> Ranking </a>
+                </li>
                 <form class="form-inline justify-content-center">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                    
@@ -132,24 +127,22 @@
       <div class="row">
         <div class="col-md-5 offset-md-1">
             <div class="heading_container">
-                <h4>Bienvenido:</h4>
+                <h4>Hola:</h4>
                 
             </div>
             <div class="container py-3">
                 <div class="row">
-                <div class="row col-sm-6 col-md-6 col-lg-6">
+                <div class="">
 
                     <p>Nombre de Usuario: <?php echo $_SESSION['usuario'] ;?></p>
                     <br><br>
-                    <p>Correo Electrónico:<?php echo $_SESSION['correo'] ;?> </p>
-                   
+                    <p>Correo Electrónico: <?php echo $_SESSION['correo'] ;?> </p>
+                    <br><br>
+                    <p>Puntos: <?php echo $_SESSION['puntos'] ;?> </p>
                 </div>  
 </div> 
-<div class="b">
-<p><a href="cerrars.php">Cerrar Sesión</a></p>
-
-</div>
         </div>
+        <p><a href="cerrars.php">Cerrar Sesión</a></p>
       </div>
     </div>
   </section>

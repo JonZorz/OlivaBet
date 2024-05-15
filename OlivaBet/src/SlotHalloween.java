@@ -269,7 +269,9 @@ public class SlotHalloween extends JFrame implements ActionListener{
         if (totalPayaso >= 12) {
             sumarPuntos(700);
         }
-     
+        if(InicioOlivaBet.puntuacion <850)
+        	btnJugar.setEnabled(false);
+        
         panelEmojis.revalidate();
         panelEmojis.repaint();
     }
@@ -288,8 +290,7 @@ public class SlotHalloween extends JFrame implements ActionListener{
 
     public static void main(String[] args) {
         new SlotHalloween();
-    	if(InicioOlivaBet.puntuacion<15000)
-			btnJugar.setEnabled(false);
+    	
     }
 	@Override
 	public void actionPerformed(ActionEvent e) {

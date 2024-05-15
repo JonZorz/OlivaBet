@@ -38,7 +38,7 @@ public class SlotFrutas extends JFrame implements ActionListener {
 		add(panelSur, BorderLayout.SOUTH);
 		panelSur.add(btnJugar);
 		panelSur.add(btnVolver);
-       
+
 		setVisible(true);
 	}
 
@@ -220,9 +220,9 @@ public class SlotFrutas extends JFrame implements ActionListener {
 		if (totalCereza >= 8) {
 			sumarPuntos(180);
 		}
-		if(InicioOlivaBet.puntuacion <350)
-        	btnJugar.setEnabled(false);
-		
+		if (InicioOlivaBet.puntuacion < 350)
+			btnJugar.setEnabled(false);
+
 		panelEmojis.revalidate();
 		panelEmojis.repaint();
 	}
@@ -241,7 +241,7 @@ public class SlotFrutas extends JFrame implements ActionListener {
 
 	public static void main(String[] args) {
 		new SlotFrutas();
-	
+
 	}
 
 	@Override
@@ -252,7 +252,7 @@ public class SlotFrutas extends JFrame implements ActionListener {
 		}
 		if (e.getSource() == btnVolver)
 			new InicioOlivaBet();
-			InicioOlivaBet.puntuacion = Integer.parseInt(lblPuntos.getText());
+		InicioOlivaBet.puntuacion = Integer.parseInt(lblPuntos.getText());
 
 	}
 

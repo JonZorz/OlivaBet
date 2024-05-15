@@ -2,9 +2,9 @@
 // Archivo: olivaInsert.php
 
 // Establecer conexión con la base de datos (reemplaza los valores con los de tu configuración)
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "databaseolivabet.c7eigymywlgc.us-east-1.rds.amazonaws.com";
+$username = "crupiermaestro";
+$password = "sasamkdojojfaojjokefju9e";
 $dbname = "olivabet";
 
 // Crear conexión
@@ -27,10 +27,11 @@ $sql = "INSERT INTO usuarios (nombreUsuario, contrasena, correoelectronico, punt
 
 
 if ($conn->query($sql) === TRUE) {
-    echo "Usuario registrado correctamente.";
+    echo "Usuario registrado correctamente." . $_SESSION['usuario'] = $nombreUsuario;
 } else {
     echo "Error al registrar el usuario: " . $conn->error;
 }
+header("Location:cuenta.php");
 
 // Cerrar la conexión
 $conn->close();

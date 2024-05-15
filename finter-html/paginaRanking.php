@@ -9,8 +9,6 @@
        echo 'no iniciada la sesión';
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 
@@ -25,7 +23,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/Oliva_Bet.png" type="image/x-icon">
-  <title>Tragaperras Oliva Bet</title>
+  <title>Ranking</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -43,6 +41,7 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <link href="css/tabla.css" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -113,7 +112,7 @@
                 </li>
                 <form class="form-inline justify-content-center">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                   
+                    
                   </button>
                 </form>
               </ul>
@@ -123,112 +122,42 @@
       </div>
     </header>
     <!-- end header section -->
-
   </div>
 
-  <!-- service section -->
 
-  <section class="service_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center ">
-        <h2 class="">
-          Tragaperras
-        </h2>
-        <p class="col-lg-8 px-0">
-          Estas son las tragaperras de las que disponemos actualmente con las temáticas:<br>(Frutas, Animales, Joyas, Halloween y Navidad)
-        </p>
-      </div>
-      <div class="service_container">
-        <div class="carousel-wrap ">
-          <div class="service_owl-carousel owl-carousel">
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s1.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    FRUTAS
-                  </h5>
-                  <p>
-                    <b>Desbloquear juego:</b> Gratis<br><b>Cada tirada:</b> 350 créditos<br> <b>Ganancias:</b> 5 frutas iguales x0.5, 6 frutas iguales x1,<br>7 frutas iguales x1.5, 8 frutas iguales x2<br><b>Valor de menos a más:</b> Pomelo, Limón, Naranja, Piña, Banana, Sandía, Coco, Uva, Cereza, Fresa
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s4.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    ANIMALES
-                  </h5>
-                  <p>
-                    <b>Desbloquear juego:</b> Gratis<br><b>Cada tirada:</b> 350 créditos<br> <b>Ganancias:</b> 5 animales iguales  x0.5, 6 animales iguales x1,<br>7 animales iguales x1.5, 8 animales iguales x2<br><b>Valor de menos a más:</b> Caracol, Zorro, Elefante, Caballo, Perro, Búfalo, Oso, Tigre, Vaca, Oca
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s6.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    JOYAS
-                  </h5>
-                  <p>
-                    <b>Desbloquear juego:</b> 8000 créditos<br><b>Cada tirada:</b> 350 créditos<br> <b>Ganancias:</b> 2 símbolos iguales x3,<br>  3 símbolos iguales x5<br><b>Valor de menos a más:</b> Número "10", Letra "K", Trompeta del Rey, Billete, Bolsa de Dinero, Moneda de Copenhague, Colgante, Anillo, Diamante, Corona
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s1.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    HALLOWEEN
-                  </h5>
-                  <p>
-                    <b>Desbloquear juego:</b> 15000 créditos / Gratis en su fecha<br><b>Cada tirada:</b> 850 créditos<br> <b>Ganancias:</b> 8 símbolos iguales x0.5, 9 símbolos iguales x1, 10 símbolos iguales x2, 11 símbolos iguales x4, 12 símbolos iguales x7<br><b>Valor de menos a más:</b> Calavera, Cuchillo, Murciélago, Vampiro, Fantasma, Zombi, Brujo, Bruja, Calabaza, Payaso
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s4.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    NAVIDAD
-                  </h5>
-                  <p>
-                  <b>Desbloquear juego:</b> 15000 créditos  / Gratis en su fecha<br><b>Cada tirada:</b> 1050 créditos<br> <b>Ganancias:</b> 8 símbolos iguales x0.5, 9 símbolos iguales x1, 10 símbolos iguales x2, 11 símbolos iguales x4, 12 símbolos iguales x7<br><b>Valor de menos a más:</b> Calcetines, Vela, Pino, Campana, Regalo, Muñeco de nieve, Estrella, Trineo, Reno, Santa
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      <div class="btn-box">
-      <a href="../juego/juegoOlivaBet.jar" download>
-           Descargar 
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- about section -->
 
-  <!-- service section ends -->
+<div>
+  <br><br>
+<h3>Ranking de los 10 mejores usuarios</h3>
+  <table>
+    <th>Usuarios</th><th>Puntos</th>
+    <?php
+    $conn = mysqli_connect ("localhost","root","","olivabet");
+    if($conn-> connect_error){
+        die("Conexión fallida:".$conn -> connect_error);
+    }
+    $sql = "SELECT nombreUsuario, puntos FROM usuarios ORDER BY puntos DESC LIMIT 10";
+    $result = $conn -> query($sql);
+
+    if($result-> num_rows > 0){
+        while($row = $result -> fetch_assoc()){
+            echo "<tr><td>".$row ["nombreUsuario"]. "</td><td>".$row["puntos"]."</td></tr>";
+        }
+        echo "</table>";
+    }
+    else {
+        echo "sin registros";
+    }
+    $conn -> close();
+    ?>
+
+    
+    </table>
+
+  
+<div>
+  <!-- about section ends -->
 
   <!-- info section -->
   <section class="info_section ">
@@ -278,7 +207,7 @@
   <footer class="footer_section">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> Derechos reservados
+        &copy; <span id="displayYear"></span> Derechos Reservados
         
       </p>
     </div>
@@ -316,7 +245,6 @@
    
       
     </script>
-
 
 
 </body>

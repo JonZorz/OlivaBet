@@ -2,10 +2,11 @@
 
       include("olivainicioSesion.php");
       
-      if(isset($_SESSION['usuario']))
+      if(isset($_SESSION['usuario'])){
         echo $_SESSION['usuario'];
+      }
       else
-       echo 'No está iniciada la sesión';
+       echo 'no iniciada la sesión';
 ?>
 
 
@@ -45,11 +46,12 @@
 
 <body>
 
+
   <section class="modal" id="mostrar" style="display: none;">
     <div class="modal-container">
         <img class="modal-img" src="images/Oliva_Bet.png" >
         <h2 id="eliminar" class="title">¡¡Bienvenido a Oliva Bet!! </h2>
-        <p id="eliminar_dos" class="paragraph">Inicia sesión en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta, regístrate</p>
+        <p id="eliminar_dos" class="paragraph">Inicia sesión en Oliva Bet y accede a tu cuenta.<br> Si no tienes cuenta regístrate</p>
         <div id="eliminar_tres" class="btns">
             <a href="registrarse.php" target="_blank" class="open-guide">Regístrate</a>
             <a href="iniciarsesion.php" target="_blank" class="open-guide">Iniciar Sesión</a>
@@ -73,7 +75,7 @@
             <a href="">
             </a>
             <a href="">
-             <h1>Oliva Bet </h1>
+             <h1>Oliva Bet</h1>
              
             </a>
             <a href="">
@@ -107,11 +109,13 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="cuenta.php">Mi Perfil</a>
+                  <a class="nav-link" href="cuenta.php">Mi perfil</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="paginaRanking.php"> Ranking </a>
                 </li>
                 <form class="form-inline justify-content-center">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-
                   </button>
                 </form>
               </ul>
@@ -152,7 +156,7 @@
                       ¡¡Y prueba todas nuestras Slots!!
                     </h1>
                     <p>
-                      Tenemos todo tipo de Slot disponible para poder probar este tipo de juego. Diviértete, juega, disfruta de todos nuestros servicios.
+                      Tenemos todo tipo de Slot disponible para poder probar este tipo de juego. Diviertéte, juega, disfruta de todos nuestros servicios.
                     </p>
                     <div class="btn-box">
                       <a href="registrarse.php" target="_blank" class="btn1">
@@ -170,7 +174,7 @@
                 <div class="col-lg-10 col-md-11 mx-auto">
                   <div class="detail-box">
                     <h1>
-                      Te esperamos<br>
+                      Te esperamos <br>
                       ¡¡Únete y empieza con 5000 créditos!!
                     </h1>
                     <p>
@@ -194,10 +198,10 @@
     <div class="container">
       <div class="heading_container heading_center ">
         <h2 class="">
-          Nuestros servicios
+          Nuestros servicios 
         </h2>
         <p class="col-lg-8 px-0">
-          ¡¡En Oliva Bet podrás difrutas de máquinas de distintas temáticas!!
+          ¡¡En OlivaBet podrás difrutas de máquinas de distintas temáticas!!
         </p>
       </div>
       <div class="service_container">

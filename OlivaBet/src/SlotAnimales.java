@@ -239,6 +239,8 @@ public class SlotAnimales extends JFrame implements ActionListener{
         
         
    
+        if(InicioOlivaBet.puntuacion <350)
+        	btnJugar.setEnabled(false);
         
         panelEmojis.revalidate();
         panelEmojis.repaint();
@@ -258,8 +260,7 @@ public class SlotAnimales extends JFrame implements ActionListener{
 
     public static void main(String[] args) {
         new SlotAnimales();
-        if(InicioOlivaBet.puntuacion<350)
-			btnJugar.setEnabled(false);
+        
     }
     
 	@Override

@@ -57,7 +57,7 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
 	      
 	      add(lbltitulo,BorderLayout.NORTH);
 	      add(panel,BorderLayout.CENTER);
-	   
+
 	      
 	      panel.add(lblnombreUsuario);
 	      panel.add(txtnombreUsuario);
@@ -73,7 +73,7 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
 	      lbltitulo.setFont(new Font("Arial", Font.BOLD, 25));
 	      lbltitulo.setForeground(new Color (3, 169, 252));
 	      
-	   
+	      
 	       
 	}
 
@@ -90,9 +90,10 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		
+	InicioOlivaBet inicio = new InicioOlivaBet();
+	inicio.setVisible(false);
 	new RegistroOlivaBet();
-			
+	
 		
 	}
 	
@@ -112,7 +113,7 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
              System.out.println("The IP Address of client is : " + (my_localhost.getHostAddress()).trim());
              String my_system_address = "";
              
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/olivabet", "root", "");
+		     Connection conn = DriverManager.getConnection("jdbc:mysql://databaseolivabet.c7eigymywlgc.us-east-1.rds.amazonaws.com:3306/olivabet", "crupiermaestro", "sasamkdojojfaojjokefju9e");
 
             String sql = "INSERT INTO usuarios (nombreUsuario, contrasena, correoelectronico,puntos,fecha_Alta,IP_Registro) VALUES ('"+ nombreUsuario+"','"+encriptado+"','"+ correoElectronico+"','"+puntosIniciales+"','"+timestamp+"','"+(my_localhost.getHostAddress()).trim()+"')";
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -147,7 +148,7 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
         try {
         
    
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/olivabet", "root", "");
+	        Connection conn = DriverManager.getConnection("jdbc:mysql://databaseolivabet.c7eigymywlgc.us-east-1.rds.amazonaws.com:3306/olivabet", "crupiermaestro", "sasamkdojojfaojjokefju9e");
 
             String iniciosesion = "SELECT nombreUsuario,contrasena,correoelectronico FROM usuarios WHERE nombreUsuario ='"+nombreUsuarioInicio+"'AND contrasena ='"+encriptadoInicio+"'AND correoelectronico ='"+correoElectronicoInicio+"'";
             PreparedStatement stmt = conn.prepareStatement(iniciosesion);
@@ -159,7 +160,26 @@ public class RegistroOlivaBet extends JFrame implements ActionListener {
         	   funciona = true;
         	   
 				JOptionPane.showMessageDialog(this, "Felicidades, has iniciado sesión","Inicio de sesión",JOptionPane.INFORMATION_MESSAGE);
+				
+				
+	            String obtenerPuntuacion = "SELECT puntos FROM usuarios WHERE nombreUsuario ='"+nombreUsuarioInicio+"'AND contrasena ='"+encriptadoInicio+"'AND correoelectronico ='"+correoElectronicoInicio+"'";
+	            PreparedStatement stmt2 = conn.prepareStatement(obtenerPuntuacion);
+	            ResultSet obtenerPuntos = stmt2.executeQuery();
+	          
+	            
+	            
+	            if (obtenerPuntos.next()) {
+	            InicioOlivaBet.puntuacion = obtenerPuntos.getInt(1);
+	            System.out.println( InicioOlivaBet.puntuacion);
+	            InicioOlivaBet.lblPuntos.setText(String.valueOf(InicioOlivaBet.puntuacion));
+	            
+	            }
+	            else
+	            	System.out.println("Error");
+	        
 
+	            
+	            
         	   new InicioOlivaBet();
            } else {
 				JOptionPane.showMessageDialog(this, "Tienes que introducir datos correspondientes","Error al inciar sesión",JOptionPane.ERROR_MESSAGE);
