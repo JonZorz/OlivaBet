@@ -15,7 +15,7 @@
         <img class="modal-img" src="./images/Oliva_Bet.png" width="200">
         </a>
     </div>
-    <form name="Registrarse" method="get" action="./olivaInsert.php" onsubmit="return validarFormulario1()">
+    <form name="Registrarse" method="POST" action="./olivaInsert.php" onsubmit="return validarFormulario1()">
   
   
         <div class="form-row">

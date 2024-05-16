@@ -15,9 +15,9 @@ if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 
-$nombreUsuario = $_GET['nombreUsuario'];
-$contrasena = md5($_GET['contrasena']); // Aquí se encripta la contraseña con md5
-$correoelectronico = $_GET['correoelectronico'];
+$nombreUsuario = $_POST['nombreUsuario'];
+$contrasena = md5($_POST['contrasena']); // Aquí se encripta la contraseña con md5
+$correoelectronico = $_POST['correoelectronico'];
 $puntos = 5000;
 
 $ip = $_SERVER['REMOTE_ADDR'];
