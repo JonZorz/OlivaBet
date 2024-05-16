@@ -2,11 +2,13 @@
 
       include("olivainicioSesion.php");
       
-      if(isset($_SESSION['usuario'])){
-        echo $_SESSION['usuario'];
+      if(!isset($_SESSION['usuario'])){
+        header('Location:index.php');
+        exit();
       }
       else
-       echo 'no iniciada la sesión';
+      echo $_SESSION['usuario'];
+    
 ?>
 
 <!DOCTYPE html>
@@ -133,7 +135,7 @@
   <table>
     <th>Usuarios</th><th>Puntos</th>
     <?php
-    $conn = mysqli_connect ("localhost","root","","olivabet");
+    $conn = mysqli_connect ("databaseolivabet.c7eigymywlgc.us-east-1.rds.amazonaws.com","crupiermaestro","sasamkdojojfaojjokefju9e","olivabet");
     if($conn-> connect_error){
         die("Conexión fallida:".$conn -> connect_error);
     }

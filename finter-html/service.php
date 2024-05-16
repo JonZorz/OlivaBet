@@ -2,11 +2,14 @@
 
       include("olivainicioSesion.php");
       
-      if(isset($_SESSION['usuario'])){
-        echo $_SESSION['usuario'];
+      if(!isset($_SESSION['usuario'])){
+        header('Location:index.php');
+        
+        exit();
       }
       else
-       echo 'no iniciada la sesión';
+      echo $_SESSION['usuario'];
+  
 ?>
 
 
@@ -135,7 +138,7 @@
           Tragaperras
         </h2>
         <p class="col-lg-8 px-0">
-          Estas son las tragaperras de las que disponemos actualmente con las temáticas:<br>(Frutas, Animales, Joyas, Halloween y Navidad)
+          Estas son las tragaperras de las que disponemos actualmente con las temáticas:<br>(<a href="./pdf/Frutas.pdf" target="_blank">Frutas</h7>, <a href="./pdf/Animales.pdf" target="_blank">Animales</h7>, <a href="./pdf/Joyas.pdf" target="_blank">Joyas</a>, <a href="./pdf/Halloween.pdf" target="_blank">Halloween</a> y <a href="./pdf/Navidad.pdf" target="_blank">Navidad</a>)
         </p>
       </div>
       <div class="service_container">
@@ -198,6 +201,7 @@
                   <p>
                     <b>Desbloquear juego:</b> 15000 créditos / Gratis en su fecha<br><b>Cada tirada:</b> 850 créditos<br> <b>Ganancias:</b> 8 símbolos iguales x0.5, 9 símbolos iguales x1, 10 símbolos iguales x2, 11 símbolos iguales x4, 12 símbolos iguales x7<br><b>Valor de menos a más:</b> Calavera, Cuchillo, Murciélago, Vampiro, Fantasma, Zombi, Brujo, Bruja, Calabaza, Payaso
                   </p>
+                  
                 </div>
               </div>
             </div>

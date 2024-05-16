@@ -239,13 +239,13 @@ public class SlotJoyas extends JFrame implements ActionListener{
         if(totalCorona == 6) {
         	sumarPuntos(50);
         }
-        if(totalDiamante == 7) {
+        if(totalCorona == 7) {
         	sumarPuntos(100);
         }
-        if(totalDiamante == 8) {
+        if(totalCorona == 8) {
         	sumarPuntos(250);
         }
-        if(totalDiamante >= 9) {
+        if(totalCorona >= 9) {
         	sumarPuntos(500);
         }
         

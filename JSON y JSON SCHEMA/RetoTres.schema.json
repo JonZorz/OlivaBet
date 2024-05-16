@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type":"object",
   "title": "Oliva Bet",
+  "type":"object",
   "properties": {
     "Casino": {
     "type": "array",
@@ -22,7 +22,7 @@
                 },
                 "correoelectronico": {
                     "type": "string", 
-                    "pattern": "^[a-z0-9._%+-]+@[a-z0-9._%+-]{1,}[.][a-z]{2,3}$"
+                    "pattern": "^[a-z0-9._%+-]+@[a-z0-9._%+-]+[.][a-z]{2,3}$"
                 },
                 "fecha_Alta":{
                     "type":"string",

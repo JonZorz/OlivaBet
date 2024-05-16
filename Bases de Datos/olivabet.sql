@@ -1,22 +1,5 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2024 a las 17:27:16
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
+Create database olivabet;
+use olivabet;
 --
 -- Base de datos: `olivabet`
 --
@@ -84,7 +67,18 @@ INSERT INTO `usuarios` (`idUsuario`, `nombreUsuario`, `contrasena`, `correoelect
 (73, 'DavyJones23', '321ca6c23928968a61578c4396e23a8c', 'piratilla23@gmail.com', 435, '2024-05-09 15:08:09', '123.98.7.5'),
 (74, 'LucasVazquez17', 'e99a1cabb25217e9c1c189081f4e2a0b', 'lucass17@hotmail.com', 6788, '2024-05-09 15:11:28', '181.20.23.3'),
 (77, 'TomasShelby1800', '9c95eacbed3d8638597aa7aafc089202', 'shelby1@gmail.com', 9999, '2024-05-09 15:17:31', '127.67.43.9'),
-(78, 'SaleguiAlejandro23', '30e24872067cfdd0b3c3365f3c822c57', 'rebollo76@gmail.eus', 3211, '2024-05-09 15:19:58', '::1');
+(78, 'SaleguiAlejandro23', '30e24872067cfdd0b3c3365f3c822c57', 'rebollo76@gmail.eus', 3211, '2024-05-09 15:19:58', '124.89.76.4'),
+(79, 'Jadjer04', '31db881c9b4628095cbdc3b4d872bfd2', 'aa.oliva@aulanzt.net', 3180, '2024-05-10 06:20:07', '192.168.56.1'),
+(110, 'MartinTxo', 'c947eb5b4e82d605968d8ee690e07626', 'martin@hotmail.com', 5000, '2024-05-14 06:24:17', '112.77.64.3'),
+(111, 'JoxeMai', 'dbdeabf1bb0fc1f9d80a73e3eb3240bd', 'joxebetimari@gmail.com', 5000, '2024-05-14 06:25:19', '133.33.31.2'),
+(112, 'Aaronson', '380cc7f9a5ae29663d849ac0fe4069b1', 'aaronoson@gmail.com', 5000, '2024-05-14 06:26:14', '187.93.10.1'),
+(113, 'Fogi99', 'a72c348edfcd38dfeb384b35f4c2a104', 'fogi@gmail.com', 5000, '2024-05-14 06:27:06', '165.55.43.7'),
+(114, 'a', '0cc175b9c0f1b6a831c399e269772661', 'a', 5000, '2024-05-14 06:48:49', '::1'),
+(115, 'f', '8fa14cdd754f91cc6554c9e71929cce7', 'f', 5000, '2024-05-14 07:28:06', '::1'),
+(116, 'd', '8277e0910d750195b448797616e091ad', 'd', 5000, '2024-05-14 07:29:34', '::1'),
+(117, 'd', '8277e0910d750195b448797616e091ad', 'd', 5000, '2024-05-14 07:29:35', '::1'),
+(118, 'd', '8277e0910d750195b448797616e091ad', 'd', 5000, '2024-05-14 07:29:35', '::1'),
+(119, 'drwerw', 'dc189cc59c532e75e957f5dc64f03b82', 'dww', 5000, '2024-05-14 07:30:19', '::1');
 
 --
 -- Índices para tablas volcadas
@@ -128,9 +122,36 @@ ALTER TABLE `maquinas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+Insert into empleados (`idEmpelado`, `nombreEmpleado`,`cargo`,`sueldo`)
+values (1,"Aaron","Trabajador de mantenimineto WEB",1626),
+	   (2,"Julen","Trabajador de mantenimineto WEB",2037),
+	   (3,"Mario","Programador Júnior",1327),
+       (4,"Jon","Atención al cliente",2113),
+	   (5,"Iñaki","Trabajador de mantenimineto WEB",1168);
+  
+  
+SELECT*FROM usuarios;
+SELECT*FROM empleados;
+
+INSERT INTO `usuarios` (`idUsuario`, `nombreUsuario`, `contrasena`, `correoelectronico`, `puntos`, `fecha_Alta`, `IP_Registro`) VALUES
+(135, 'Mane14', 'g7608826f9518f79739bb6bc20cb1a55', 'mane@hotmail.com', 5700, '2024-05-12 15:09:04', '111.61.8.2');
+INSERT INTO `usuarios` (`idUsuario`, `nombreUsuario`, `contrasena`, `correoelectronico`, `puntos`, `fecha_Alta`, `IP_Registro`) VALUES
+(136, 'Boss21', 'g7608826f9518f72139bl0bc20cb1a55', 'boss@hotmail.com', 6409, '2024-05-14 17:34:54', '118.43.9.6'),
+(137, 'Carletto15', 'g7608826s3318f79739bb6bc20cb1j00', 'carlo@gmail.com', 6109, '2024-05-12 19:09:44', '101.78.7.2');
+set sql_safe_updates = 0;
+UPDATE usuarios
+set nombreUsuario = "casinoLoco" where nombreUsuario = "f";
+set sql_safe_updates = 1;
+UPDATE usuarios
+set nombreUsuario = "CasinoLoco" where nombreUsuario = "casinoLoco";
+set sql_safe_updates = 1;
+
+
+-- los nombres que empiezan en minúscula han sido eliminados o reemplazados para que todos los nombres comienzen con mayúscula, lo hemos realizado todo en una única consulta que es la siguente:
+
+-- set sql_safe_updates = 0;
+-- delete from usuarios where nomrbeUsuario = ""
+-- set sql_safe_updates = 1;

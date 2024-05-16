@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Archivo: olivaInsert.php
 
 // Establecer conexión con la base de datos (reemplaza los valores con los de tu configuración)
@@ -28,10 +29,13 @@ $sql = "INSERT INTO usuarios (nombreUsuario, contrasena, correoelectronico, punt
 
 if ($conn->query($sql) === TRUE) {
     echo "Usuario registrado correctamente." . $_SESSION['usuario'] = $nombreUsuario;
+    $_SESSION['correo'] =  $correoelectronico;
+    $_SESSION['puntos'] = $puntos;
+    header("Location:cuenta.php");
 } else {
     echo "Error al registrar el usuario: " . $conn->error;
 }
-header("Location:cuenta.php");
+
 
 // Cerrar la conexión
 $conn->close();
