@@ -224,8 +224,8 @@
           </div>
         </div>
       </div>
-      <div class="btn-box">
-      <a href="../juego/juegoOlivaBet.jar" download>
+      <div class="btn-box" >
+      <a href="../juego/juegoOlivaBet.jar" download hidden>
            Descargar 
         </a>
       </div>
