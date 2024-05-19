@@ -22,7 +22,7 @@ public class SlotNavidad extends JFrame implements ActionListener{
 
         emojis = new String[][]{
         	{"🎅", "🎁", "🔔", "🎄", "🌟"},
-            {"☃️", "🧦", "🕯", "🛷", "🦌"} 
+            {"☃️", "🧦", "🕯️", "🛷", "🦌"} 
         };
         
        
@@ -67,7 +67,7 @@ public class SlotNavidad extends JFrame implements ActionListener{
                 panelEmojis.add(emojiLabel);
                 
       
-                if (emojis[aleatorioFila][aleatorioColumna].equals("🕯")) {
+                if (emojis[aleatorioFila][aleatorioColumna].equals("🕯️")) {
                     totalVela++;
                 }
                 if (emojis[aleatorioFila][aleatorioColumna].equals("🎅")) {
