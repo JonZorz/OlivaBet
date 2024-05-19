@@ -22,7 +22,7 @@ public class SlotHalloween extends JFrame implements ActionListener{
         setLocationRelativeTo(null);//para poner centrada la ventana
 
         emojis = new String[][]{
-        	{"🧟‍♂️", "🧌", "🧙‍♀️", "🎃", "👻"},
+        	{"🧟‍♂️", "🧙", "🧙‍♀️", "🎃", "👻"},
             {"💀", "🦇", "🧛", "🤡", "🔪"} 
         };
         
@@ -80,7 +80,7 @@ public class SlotHalloween extends JFrame implements ActionListener{
                 if (emojis[aleatorioFila][aleatorioColumna].equals("🧟‍♂️")) {
                     totalZombi++;
                 }
-                if (emojis[aleatorioFila][aleatorioColumna].equals("🧌")) {
+                if (emojis[aleatorioFila][aleatorioColumna].equals("🧙")) {
                     totalBrujo++;
                 }
                 if (emojis[aleatorioFila][aleatorioColumna].equals("🧙‍♀️")) {
