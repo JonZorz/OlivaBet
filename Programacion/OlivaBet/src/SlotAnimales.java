@@ -20,7 +20,7 @@ public class SlotAnimales extends JFrame implements ActionListener{
         setLocationRelativeTo(null);//para poner centrada la ventana
 
         emojis = new String[][]{
-        	{"🐮", "🦬", "🦢", "🐶", "🐺"},
+        	{"🐮", "🐃", "🦢", "🐶", "🐺"},
             {"🐻", "🐴", "🐘", "🐯", "🐌"} 
         };
         
@@ -81,7 +81,7 @@ public class SlotAnimales extends JFrame implements ActionListener{
                 if (emojis[aleatorioFila][aleatorioColumna].equals("🐶")) {
                     totalPerro++;
                 }
-                if (emojis[aleatorioFila][aleatorioColumna].equals("🦬")) {
+                if (emojis[aleatorioFila][aleatorioColumna].equals("🐃")) {
                     totalBufalo++;
                 }
                 if (emojis[aleatorioFila][aleatorioColumna].equals("🐻")) {
